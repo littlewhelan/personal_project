@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Blackjack
+  div#mainContainer.fluid
+    div#dealerHand.row
+      div.col-sm-3.cards
+      div.col-sm-3.cards
+    div#playerHand.row
+        div.col-sm-3.cards
+        div.col-sm-3.cards
+    div.gamePlayButtons
+      button(id='stayBtn' ng-click='stayBtn()') Stay
+      button(id='hitBtn' ng-click='hitBtn()') Hit
+      button(id='dealBtn' ng-click='dealBtn()') Deal
