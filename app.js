@@ -10,6 +10,7 @@ var deal = require('./routes/deal');
 var double = require('./routes/double');
 var hit = require('./routes/hit');
 var stay = require('./routes/stay');
+var rules = require('./routes/rules');
 
 
 
@@ -32,6 +33,7 @@ app.use('/', deal);
 app.use('/', double);
 app.use('/', hit);
 app.use('/', stay);
+app.use('/', rules);
 
 
 

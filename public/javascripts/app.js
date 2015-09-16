@@ -47,4 +47,13 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
         });
     };
 
+    $scope.rulesBtn = function() {
+        $http({
+            method: 'GET',
+            url: '/rules'
+        }).then(function (response) {
+            console.log("You are on the rules page");
+            $scope.card = response.data
+        });
+    };
 }]);
