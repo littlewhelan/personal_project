@@ -12,8 +12,6 @@ var hit = require('./routes/hit');
 var stay = require('./routes/stay');
 var rules = require('./routes/rules');
 
-
-
 var app = express();
 
 // view engine setup

@@ -3,7 +3,7 @@ var router = express.Router();
 var cards = require('cards');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/rules', function(req, res, next) {
     res.render('rules');
 });
 
