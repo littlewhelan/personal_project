@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('cards');
+var cards = require('deckOfCards');
 
 //set the route for the hit button
 router.get('/hit', function(req, res, next) {
