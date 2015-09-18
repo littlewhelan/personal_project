@@ -1,16 +1,19 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('deckOfCards');
+var cards = require('../models/cards');
 
 //set the route for the deal button
-router.get('/deal', function(req, res, next) {
+router.get('/', function(req, res, next) {
+
+    //should use the cards model to crete a deck of cards
+
+   // console.log(cards.theDeck());
+    console.log(cards.deck());
+
+
     res.render('index');
-    var deck = new cards.PokerDeck();
-// Shuffle the deck
-    deck.shuffleAll();
-// Draw a card
-    var card = deck.draw();
-    console.log(card);
+
+
 });
 
 module.exports = router;

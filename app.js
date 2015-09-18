@@ -11,6 +11,7 @@ var double = require('./routes/double');
 var hit = require('./routes/hit');
 var stay = require('./routes/stay');
 var rules = require('./routes/rules');
+//var deckOfCards = require('./modules/deckOfCards');
 
 var app = express();
 
@@ -27,11 +28,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/', deal);
-app.use('/', double);
-app.use('/', hit);
-app.use('/', stay);
-app.use('/', rules);
+app.use('/deal', deal);
+app.use('/double', double);
+app.use('/hit', hit);
+app.use('/stay', stay);
+app.use('/rules', rules);
 
 
 
