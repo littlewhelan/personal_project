@@ -13,37 +13,34 @@ var allCards = {
 //this will create an array with 52 objects (the cards)
     deck: function () {
         var cards = [];
-        this.names = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
-        this.suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+        this.name = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
+        this.suit = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
 
 
-        for (var s = 0; s < this.suits.length; s++) {
-            for (var n = 0; n < this.names.length; n++) {
-                cards.push(new Card(this.names[n], n + 1, this.suits[s]));
-
+        for (var s = 0; s < this.suit.length; s++) {
+            for (var n = 0; n < this.name.length; n++) {
+                cards.push(new this.Card(this.name[n], n + 1, this.suit[s]));
             }
         }
         return cards;
     },
 
     //This is the Fisher Yates Function
-    shuffleDeck: function (array) {
-        var m = array.length, t, i;
+    shuffleDeck: function (cards) {
+        var m = cards.length, t, i;
         while (m) {
             i = Math.floor(Math.random() * m--);
-            t = array[m];
-            array[m] = array[i];
-            array[i] = t;
+            t = cards[m];
+            cards[m] = cards[i];
+            cards[i] = t;
         }
-            return array
+            return cards
         },
 
     theDeck: function() {
 
-        shuffleDeck(deck());
+      return this.shuffleDeck(this.deck());
     }
-
-
     };
 
 
