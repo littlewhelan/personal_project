@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-var arrays = {
+var hands = {
 
     dealerArray: [],
     playerArray: [],
@@ -12,4 +12,4 @@ var arrays = {
     split3Array: []
 };
 
-module.exports = arrays;
+module.exports = hands;
