@@ -1,35 +1,36 @@
 extends layout
 
 block content
-    h1 Rules
+    h1.textCenter Game Rules
     div
-        h3 The Game
+        h3.textCenter The Goal
         P In Blackjack the goal of the game is to have a score closer to 21 than the dealer, without going over. The rules for the dealer's hand are stricly dictated leaving no decisions to the dealer.
     div
-        h3 Values of the Cards
+        h3.textCenter Values of the Cards
         ul
             li Aces can have a value of 1 or 11
             li Cards 2 through 9 are face value
             li 10, Jack, Queen, and King have values of 10
     div
-        h3 Placing a Bet
-        p A bet is the amount a player wishes to wager on each hand that is played, the bet can not be changed once the cards have been dealt. For this game a player may make a bet between $1 and $100, if a player does not have enough to make the bet they will be asked to lower their bet.
+        h3.textCenter Placing a Bet
+        p A bet is the amount a player wishes to wager on each hand that is played, the bet can not be changed once the cards have been dealt. For this game a player may make a bet between $1 and $100.
+        h3.textCenter Dealing
+        p After the bet has been placed for the hand the cards will be dealt. The dealer will make two passes around the table passing one card to himself and one to the player each time. Both of the player's cards will be face up, but only one of the dealer's cards will be face-up.
     div
-        h3 Dealing
-        p After the bet has been placed for the hand the cards will be dealt. The dealer will make two passes around the table passing one card to himself and one to the player each time.  Both of the player's cards will be face up, but only one of the dealer's cards will be face-up.
+        h3.textCenter The Player's Hand
+        p If the player's hand consists of an ace and a face-card (Ten,Jack,Queen, or king) the have a natural blackjack. If the player does not have 21 they can stay, keeping the two cards they were dealt or they may hit taking another card to increase their total. A player may hit as many times as they like as long as the total of their cards does not exceed 21. If the player has a pair they may split their cards or they may double down. (See below for more about these options)
     div
-        h3 The Player's Hand
-        p If the player's hand totals 21 (Ace and a face card) they will receive a 2:3 payout. If the player does not have 21 they can stay, keeping the two cards they were dealt or they may hit taking another card to increase their total. A player may hit as many times as they like as long as the total of their cards does not exceed 21. If the player has a pair they may split their cards or they may double down. (See below for more about these options)
+        h3.textCenter The Dealer's Hand
+        p Once the player has taken their turn the dealer will complete the hand. The dealer will first flip over his second hand and check the total. If the total of the dealer's hand is less than 17 he must continue to draw cards until his hand totals at least 17.  If the dealer has a soft 17 (for example 2,4,A ) they will hit. (It should be noted that in some games the dealer will stand on all 17's)
     div
-        h3 The Dealer's Hand
-        p Once the player has taken their turn the dealer will complete the hand. The dealer will first flip over his second hand and check the total. If the total of the dealer's hand is less than 17 he must continue to draw cards until his hand totals at least 17.  If the dealer has a soft 17 (for example 2,4,A ) they will hit.  (It should be noted that in some games the dealer will stand on all 17's)
-    div
-        h3 Doubling
+        h3.textCenter Doubling
         p A player can choose to double down on a hand which means that they want to double the original bet on the hand. Once the player has doubled down they will only receive one more card. A player may only double the first round after the cards are dealt.
-
     div
-        h3 Splitting and Re-splitting Pairs
-        p A  player may split their cards if they receive two cards that are the same, for example if a player receives two eight's they can split the eight's. If the player choosed to split thier hand they must place a bet for the second hand that is equivalent to the original bet. The dealer will then provide a second card for each of those eight's.  The player may also hit on both of those hands as well if they would like.  If one of the second cards that the dealer provided is also an eight the player may choose to split again.
+        h3.textCenter Splitting and Re-splitting Pairs
+        p A  player may split their cards if they receive two cards that are the same, for example if a player receives two eight's they can split the eight's. If the player chooses to split their hand they must place a bet for the second hand that is equivalent to the original bet. The dealer will then provide a second card for the first card. The player may then choose to stand, hit double, or if another eight is turned up the player can split again.  If the player chooses to split a second time they must place another bet for the third hand. A second card will then be added to the second hand and the player may choose to stand, hit, double, or if another eight is turned up they may split again. This pattern will continue until all the hands are complete, note that the player may only split three times for a total of four hands. Note that a player may split tens, for example jack and queen, but this is not recommended as you will have better odds keeping the hand valued at 20.
     div
-        h3 Wins, Losses, Ties
-        p Gastropub McSweeney's next level, occupy fashion axe hella tattooed Odd Future. Trust fund food truck brunch, gentrify irony forage +1 bespoke. Wolf fixie single-origin coffee, migas messenger bag Truffaut forage Schlitz. Hella jean shorts direct trade trust fund listicle chambray. Four dollar toast fashion axe messenger bag pickled. Gluten-free try-hard cliche, 3 wolf moon XOXO Odd Future DIY forage deep v. Gentrify trust fund keffiyeh, paleo seitan pork belly banh mi Pitchfork letterpress chillwave messenger bag sriracha quinoa ugh XOXO.
+        h3.textCenter Splitting Aces
+        p A pair of aces may be split, this is a great hand for the player. Depending on house rules a casino may only allow for one more card to be added to each ace.  Also some casinos may or may not allow for a second pair of aces to be split. For this game aces that are split will only receive one more card and aces will be able to be split a second time. If a player does get a face-card paired with any of the aces it is not considered a natural blackjack and will only pay one to one.
+    div
+        h3.textCenter Wins, Losses, Ties
+        p A natural blackjack will pay 3:2 otherwise if the player wins the hand the dealer will match the bet and the next round will start. If the player looses the hand then the dealer will take the bet and a new round will start. If the player and the dealer tie than it is a push, the player will keep their money and the next round will begin.
