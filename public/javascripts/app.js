@@ -46,13 +46,13 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             $scope.card = response.data
         });
     };
-
-    $scope.rulesBtn = function() {
+    //This will make a call for the split button
+    $scope.splitBtn = function() {
         $http({
             method: 'GET',
-            url: '/rules'
+            url: '/split'
         }).then(function (response) {
-            console.log("You are on the rules page");
+            console.log("You are pn the split route ");
             $scope.card = response.data
         });
     };
