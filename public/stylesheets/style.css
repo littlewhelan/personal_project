@@ -3,15 +3,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .cards {
   border: 1px solid #000000;
   width:175px;
   height:275px;
 }
+
 .textCenter{
   text-align: center;
 }

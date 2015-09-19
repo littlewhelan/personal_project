@@ -10,7 +10,6 @@ var deal = require('./routes/deal');
 var double = require('./routes/double');
 var hit = require('./routes/hit');
 var stay = require('./routes/stay');
-var rules = require('./routes/rules');
 var split = require('./routes/split');
 
 var app = express();
@@ -32,7 +31,6 @@ app.use('/deal', deal);
 app.use('/double', double);
 app.use('/hit', hit);
 app.use('/stay', stay);
-app.use('/rules', rules);
 app.use('/split', split);
 
 

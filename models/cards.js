@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var allCards = {
+var cards = {
 
 //This is the card constructor set up
     Card: function (name, value, suit) {
@@ -43,7 +43,6 @@ var allCards = {
     }
     };
 
-
-module.exports = allCards;
+module.exports = cards;
 
 
