@@ -11,6 +11,7 @@ var double = require('./routes/double');
 var hit = require('./routes/hit');
 var stay = require('./routes/stay');
 var split = require('./routes/split');
+var rules = require('./routes/rules');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/double', double);
 app.use('/hit', hit);
 app.use('/stay', stay);
 app.use('/split', split);
+app.use('/rules', rules);
 
 
 
@@ -49,7 +51,6 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
-    console.log(err);
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -61,7 +62,6 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  console.log(err);
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
