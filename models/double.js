@@ -1,6 +1,6 @@
 //var express = require('express');
 //var router = express.Router();
-//var cards = require('./models/cards');
+//var cards = require('./cards');
 //
 //var doubleBtn = function() {
 //    //check what the current bet is
