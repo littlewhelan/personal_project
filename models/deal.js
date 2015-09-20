@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var cards = require('./cards');
-var hands = require('./hands');
+var hands = require('./trackingDeck');
 var draw = require('./drawCard');
 
 //this will deal the first cards of both the player and the house

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var cards = require('../models/cards');
 var deal = require('../models/deal');
-var arrays = require('../models/hands');
+var arrays = require('../models/trackingDeck');
 var emptyHands =require('../models/emptyHands');
 
 //this will get the cards to deal the hand

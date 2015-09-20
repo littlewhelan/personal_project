@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 var hands = {
-    startingdeckArray:[],
+    startDeckArray:[],
     dealerArray: [],
     playerArray: [],
     discardArray: [],
