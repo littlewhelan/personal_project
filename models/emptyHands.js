@@ -3,27 +3,24 @@ var router = express.Router();
 var hands = require('./hands');
 
 var emptyHands =  {
-    //must move all cards in play to the discard pile
-    dealerEmpty: function (){
-        hands.discardArray.push(hands.dealerArray); }, //I think this will push an array not the objects.....will need some sort of for each loop
+
+    moveToDiscard: function(element) {
+        hands.discardArray.push(element); },
+
+    dealerEmpty: function () {
+        hands.dealerArray.forEach(this.moveToDiscard) },
 
     playerEmpty: function () {
-        hands.discardArray.push(hands.playerArray); },
+        hands.discardArray.push(this.moveToDiscard); },
 
     split1Empty: function (){
-        hands.discardArray.push(hands.split1Array);
-    },
+        hands.discardArray.push(this.moveToDiscard); },
 
     split2Empty: function (){
-        hands.discardArray.push(hands.split2Array);
-    },
+        hands.discardArray.push(this.moveToDiscard); },
 
     split3Empty: function (){
-        hands.discardArray.push(hands.split3Array);
-    }
-
+        hands.discardArray.push(this.moveToDiscard); }
 };
-
-
 
 module.exports = emptyHands;

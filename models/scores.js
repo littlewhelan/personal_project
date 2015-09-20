@@ -7,7 +7,6 @@ var cards = require('./cards');
      dealerScore: function () {
          var dScore = 0;
          //need to add a for each for the dealer hand array to add card values
-
      },
 
      playerScore: function () {
