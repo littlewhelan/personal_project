@@ -4,10 +4,10 @@ var router = express.Router();
 var cards = {
 
 //This is the card constructor set up
-    Card: function (name, value, suit) {
+    Card: function (name, suit, value) {
         this.name = name;
-        this.value = value;
         this.suit = suit;
+        this.value = (value > 10) ? 10: this.value = value ;
     },
 
 //this will create an array with 52 objects (the cards)
@@ -19,7 +19,7 @@ var cards = {
 
         for (var s = 0; s < this.suit.length; s++) {
             for (var n = 0; n < this.name.length; n++) {
-                cards.push(new this.Card(this.name[n], n + 1, this.suit[s]));
+                cards.push(new this.Card(this.name[n], this.suit[s], n+1));
             }
         }
         return cards;
