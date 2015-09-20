@@ -56,4 +56,13 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             $scope.card = response.data
         });
     };
+    $scope.betBtn = function() {
+        $http({
+            method: 'GET',
+            url: '/bet'
+        }).then(function (response) {
+            console.log("You are on the bet route ");
+            $scope.card = response.data
+        });
+    };
 }]);

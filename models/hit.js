@@ -8,7 +8,6 @@ var arrays = require('./hands');
 
 var hit = function() {
     arrays.playerArray.push(draw());
-
 };
 
 
