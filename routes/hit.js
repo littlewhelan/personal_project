@@ -15,13 +15,7 @@ router.get('/', function(req, res, next) {
     console.log('this is the player array ');
     console.log(track.playerArray );
 
-    console.log('this is the discard array ');
-    //console.log( track.discardArray);
-    console.log(track.discardArray.length);
-
-    console.log('this is the deckArray');
-    //console.log(track.startDeckArray);
-    console.log(track.startDeckArray.length);
+    console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length);
 
     res.render('index');
 });
