@@ -4,7 +4,7 @@ var router = express.Router();
 var deal = require('../models/deal');
 var track = require('../models/trackingDeck');
 var emptyHands =require('../models/emptyHands');
-var init = require('../models/newDeck');
+
 
 //this will get the cards to deal the hand
 router.get('/', function(req, res, next) {
@@ -15,12 +15,7 @@ router.get('/', function(req, res, next) {
     emptyHands.split2Empty();
     emptyHands.split3Empty();
 
-    if(track.startDeckArray.length < 8){
-        track.startDeckArray = init;
-        deal();
-    } else {
-        deal();
-    };
+    deal();
 
     console.log('this is the dealer array');
     console.log(track.dealerArray );
