@@ -5,20 +5,21 @@ var track = require('./trackingDeck');
 
  var score = {
 
-     createLoop: function(element){
-       var score = element.value + score;
+     createLoop: function(array){
+       var score = 0;
+         array.forEach(function(element){
+             score += element.value;
+         });
          return score;
      },
 
-     dealerScore: function () {
-         track.dealerArray().forEach(this.createLoop());
-
+     dealerScore: function() {
+         return this.createLoop(track.dealerArray);
      },
 
      playerScore: function () {
-         track.playerArray().forEach(this.createLoop());
-
-
+        return this.createLoop(track.playerArray);
      }
+
  };
 module.exports = score;

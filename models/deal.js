@@ -7,6 +7,7 @@ var newDeck = require('./newDeck');
 
 //this will deal the first cards of both the player and the house
 var deal = function() {
+    // makes sure there are cards in the deck or shuffles up a new deck
     if(track.startDeckArray.length <= 8){
         track.startDeckArray = newDeck();
         track.discardArray =[];
