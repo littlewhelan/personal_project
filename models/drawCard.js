@@ -6,6 +6,7 @@ var track = require('./trackingDeck');
 //this will separate the top card from the deck
 
 var drawCard  = function() {
+
   var aCard =  track.startDeckArray.shift();
     return aCard;
 };
