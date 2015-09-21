@@ -1,12 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var cards = require('./cards');
+var dHand = require('./finishDealerHand');
 
-var stayBtn = {
+var stayBtn = function() {
 
-//this needs to complete the dealers hands and check the scores to see who wins
+    //this will cause the dealers hand to be completed
+    dHand();
+
+    // this will check to see who wins the hand
+
+
+
     //also need to complete the bet payout
-    //also needs to empty all arrays into the discard pile
+
 
 
 
