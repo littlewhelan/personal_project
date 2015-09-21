@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var cards = require('./cards');
+var track = require('./trackingDeck');
 
 //this will separate the top card from the deck
-    drawCard = function() {
-      return cards.theDeck().shift();
-};
 
+var drawCard  = function() {
+  var aCard =  track.startDeckArray.shift();
+    return aCard;
+};
 module.exports =drawCard;

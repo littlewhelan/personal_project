@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var initDeck =require('./initDeck');
 
 
 var hands = {
-    startDeckArray:[],
+    startDeckArray:initDeck,
     dealerArray: [],
     playerArray: [],
     discardArray: [],
