@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('../models/cards');
+//var cards = require('../models/cards');
 var deal = require('../models/deal');
-var arrays = require('../models/trackingDeck');
+var track = require('../models/trackingDeck');
 var emptyHands =require('../models/emptyHands');
-var init = require('../models/initDeck');
+var init = require('../models/newDeck');
 
 //this will get the cards to deal the hand
 router.get('/', function(req, res, next) {
@@ -15,24 +15,24 @@ router.get('/', function(req, res, next) {
     emptyHands.split2Empty();
     emptyHands.split3Empty();
 
-    if(arrays.startDeckArray.length < 8){
-        init();
+    if(track.startDeckArray.length < 8){
+        track.startDeckArray = init;
         deal();
     } else {
         deal();
     };
 
     console.log('this is the dealer array');
-    console.log(arrays.dealerArray );
+    console.log(track.dealerArray );
 
     console.log('this is the player array ');
-    console.log(arrays.playerArray );
+    console.log(track.playerArray );
 
     console.log('this is the discard array ');
-    console.log( arrays.discardArray);
+    console.log( track.discardArray);
 
     console.log('this is the deckArray');
-    console.log(cards.theDeck());
+    console.log(track.startDeckArray);
 
     res.render('index');
 });

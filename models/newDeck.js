@@ -3,7 +3,7 @@ var router = express.Router();
 var cards = require('./cards');
 
 //this will separate the top card from the deck
-var initDeck = cards.theDeck();
+var newDeck = cards.theDeck;
 
 
-module.exports = initDeck;
+module.exports = newDeck;
