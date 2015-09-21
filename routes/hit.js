@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
     console.log('this is the player array ');
     console.log(track.playerArray );
 
-    console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length);
+    console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length + track.split1Array.length + track.split2Array.length + track.split3Array.length);
+
 
     res.render('index');
 });

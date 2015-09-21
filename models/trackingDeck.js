@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var initDeck =require('./newDeck');
 
 var hands = {
     startDeckArray:[],

@@ -1,22 +1,24 @@
 var express = require('express');
 var router = express.Router();
 var cards = require('./cards');
+var track = require('./trackingDeck');
 
  var score = {
 
+     createLoop: function(element){
+       var score = element.value + score;
+         return score;
+     },
+
      dealerScore: function () {
-         var dScore = 0;
-         //need to add a for each for the dealer hand array to add card values
-         //these will need to be loops to total the value of the hands
+         track.dealerArray().forEach(this.createLoop());
+
      },
 
      playerScore: function () {
-         var pScore =0;
-         //need to add a for each from player hand array to add card values
+         track.playerArray().forEach(this.createLoop());
+
 
      }
-
-
-
  };
 module.exports = score;
