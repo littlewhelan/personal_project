@@ -19,7 +19,22 @@ var track = require('./trackingDeck');
 
      playerScore: function () {
         return this.createLoop(track.playerArray);
+     },
+
+     split1Score: function () {
+         return this.createLoop(track.split1Array);
+     },
+
+     split2Score: function () {
+         return this.createLoop(track.split2Array);
+     },
+
+     split3Score: function () {
+         return this.createLoop(track.split3Array);
      }
+
+
+
 
  };
 module.exports = score;
