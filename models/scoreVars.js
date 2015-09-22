@@ -8,7 +8,9 @@ var score = {
     split2Score:'',
     split3Score:'',
     playerBust:false,
-    naturalBlackjack:false,
+    naturalBlackjackPlayer:false,
+    naturalBlackjackDealer:false,
 };
+
 
 module.exports= score;

@@ -10,5 +10,6 @@ var score =require('./scoreVars');
 var end = function () {
     empty();
     bet.playerBet = 0;
+    //should check if all split arrays are empty
 };
 module.exports = end;
