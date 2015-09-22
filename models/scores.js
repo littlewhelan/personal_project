@@ -33,8 +33,5 @@ var track = require('./trackingDeck');
          return this.createLoop(track.split3Array);
      }
 
-
-
-
  };
 module.exports = score;
