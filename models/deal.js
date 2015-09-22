@@ -6,6 +6,7 @@ var draw = require('./drawCard');
 var newDeck = require('./newDeck');
 var bank = require('./bankVars');
 
+
 //this will deal the first cards of both the player and the house
 var deal = function() {
     //making sure players bank is not zero

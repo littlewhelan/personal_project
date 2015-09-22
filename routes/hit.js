@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 var hit = require('../models/hit');
 var track = require('../models/trackingDeck');
 var calcScore = require('../models/calcScores');
 var score = require('../models/scoreVars');
 var aceP = require('../models/checkAcePlayer');
+=======
+var hit = require('../models/hit');
+var track = require('../models/trackingDeck');
+var score = require('../models/scores');
+>>>>>>> dataTest
 
 //set the route for the hit button
 router.get('/', function(req, res, next) {

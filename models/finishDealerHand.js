@@ -4,6 +4,7 @@ var score = require('./calcScores');
 var dealerHit = require('./dealerHit');
 var bank = require('./bankVars');
 
+
 var completeDealerHand = function() {
 
     while(score.dealerScore() < 17) {
