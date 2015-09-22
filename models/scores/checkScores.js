@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('./cards');
+var cards = require('./../cards/cards');
 var scores = require('./scores');
-var bank = require('./bank');
+var bank = require('./../bank/bank');
 
 var checkScore = function () {
         //this will have to add and subtract what the player bets looses etc.

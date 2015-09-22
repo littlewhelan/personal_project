@@ -8,7 +8,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             method: 'GET',
             url: '/deal'
         }).then(function (response) {
-            console.log('Place data here');
+            console.log('Place scores here');
             console.log("This is the deal button ajax call");
             $scope.card = response.data
         });
@@ -19,7 +19,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
         method: 'GET',
         url: '/hit'
     }).then(function (response) {
-        console.log('Place data here');
+        console.log('Place scores here');
         console.log("This is the hit button ajax call");
         $scope.card = response.data
     });
@@ -30,7 +30,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             method: 'GET',
             url: '/stay'
         }).then(function (response) {
-            console.log('Place data here');
+            console.log('Place scores here');
             console.log("This is the stay button ajax call");
             $scope.card = response.data
         });
@@ -41,7 +41,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             method: 'GET',
             url: '/double'
         }).then(function (response) {
-            console.log('Place data here');
+            console.log('Place scores here');
             console.log("This is the stay double ajax call");
             $scope.card = response.data
         });

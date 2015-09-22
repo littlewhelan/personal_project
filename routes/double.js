@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var double = require('../models/double');
-var track = require('../models/trackingDeck');
+var track = require('../models/cards/trackingDeck');
 
 //set the route for the double button
 router.get('/', function(req, res, next) {

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('./cards');
-var track = require('./trackingDeck');
-var draw = require('./drawCard');
-var newDeck = require('./newDeck');
-var bank = require('./bank');
+var cards = require('./cards/cards');
+var track = require('./cards/trackingDeck');
+var draw = require('./cards/drawCard');
+var newDeck = require('./cards/newDeck');
+var bank = require('./bank/bank');
 
 //this will deal the first cards of both the player and the house
 var deal = function() {

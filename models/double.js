@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var track = require('./trackingDeck');
-var draw = require('./drawCard');
+var track = require('./cards/trackingDeck');
+var draw = require('./cards/drawCard');
 
 var double = function() {
     //check what the current bet is

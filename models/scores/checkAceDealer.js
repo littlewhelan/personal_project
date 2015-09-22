@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var track = require('./trackingDeck');
+var track = require('./../cards/trackingDeck');
 var score = require('./scores');
 
 //this will if there is an ace in either the dealer hand
 
-var checkAceDealer = function(array){
-
+var checkAceDealer = function(array) {
     var aceHigh = 0;
         array.forEach(function(element) {
             if (element.name == 'Ace') {
@@ -14,18 +13,14 @@ var checkAceDealer = function(array){
             }
             return aceHigh;
         });
-
             if(aceHigh == 21) {
                 score.dealerScore = 21;
             } else if (aceHigh > score.dealerScore() && aceHigh < 21 ) {
                 score.dealerScore = aceHigh;
             } else if (aceHigh > 21){
                 score.dealerScore = score.dealerScore();
-
             }
-
-
-    };
+};
 
     //for each loop like when totaling scores
     //call in the score function--what is the total when the value of the ace is set to 1
@@ -40,10 +35,5 @@ var checkAceDealer = function(array){
     //if player hits again -- needs to run again
     //needs to run if double button is hit
     // needs to run if stay button is used
-
-
-
-
-
 
 module.exports = checkAceDealer;

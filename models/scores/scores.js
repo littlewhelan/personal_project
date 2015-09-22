@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('./cards');
-var track = require('./trackingDeck');
+var cards = require('./../cards/cards');
+var track = require('./../cards/trackingDeck');
 
  var score = {
 

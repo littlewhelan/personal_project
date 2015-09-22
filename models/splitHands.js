@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var track = require('./trackingDeck');
+var track = require('./cards/trackingDeck');
 
 //if the cards in the hand can be split this is how the new arrays should be initiated
 var splitHand = {
