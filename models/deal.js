@@ -4,7 +4,7 @@ var cards = require('./cards');
 var track = require('./trackingDeck');
 var draw = require('./drawCard');
 var newDeck = require('./newDeck');
-var bank = require('./bank');
+var bank = require('./bankVars');
 
 //this will deal the first cards of both the player and the house
 var deal = function() {

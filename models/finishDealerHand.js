@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var score = require('./scores');
+var score = require('./calcScores');
 var dealerHit = require('./dealerHit');
-var bank = require('./bank');
+var bank = require('./bankVars');
 
 var completeDealerHand = function() {
 

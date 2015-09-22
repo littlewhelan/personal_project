@@ -3,9 +3,12 @@ var router = express.Router();
 var deal = require('../models/deal');
 var track = require('../models/trackingDeck');
 var emptyHands =require('../models/emptyHands');
-var score = require('../models/scores');
-var check = require('../models/checkScores');
-var bank = require('../models/bank');
+var score = require('../models/scoreVars');
+var bank = require('../models/bankVars');
+var calcScore = require('../models/calcScores');
+var aceP = require('../models/checkAcePlayer');
+//var aceD = require('../models/checkAceDealer');
+
 
 //this will get the cards to deal the hand
 router.get('/', function(req, res, next) {
@@ -17,18 +20,23 @@ router.get('/', function(req, res, next) {
     emptyHands.split3Empty();
 
     deal();
+    calcScore.dealerScoreF();
+    calcScore.playerScoreF();
+    aceP(track.playerArray);
+
 
     console.log('this is the dealer array');
     console.log(track.dealerArray );
+    console.log('this is the dealer score');
+    console.log(score.dealerScore);
 
     console.log('this is the player array ');
     console.log(track.playerArray );
 
     console.log('this is the player score');
-    console.log(score.playerScore());
+    console.log(score.playerScore);
 
-    console.log('this is the dealer score');
-    console.log(score.dealerScore());
+
     console.log('this is the players bank');
     console.log(bank.playersBank); //think this is stuck at 1000
 
