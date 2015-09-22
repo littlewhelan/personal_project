@@ -1,16 +1,11 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
 var hit = require('../models/hit');
 var track = require('../models/trackingDeck');
 var calcScore = require('../models/calcScores');
 var score = require('../models/scoreVars');
 var aceP = require('../models/checkAcePlayer');
-=======
-var hit = require('../models/hit');
-var track = require('../models/trackingDeck');
-var score = require('../models/scores');
->>>>>>> dataTest
+var bust = require ('../models/playerBust');
 
 //set the route for the hit button
 router.get('/', function(req, res, next) {
@@ -18,6 +13,8 @@ router.get('/', function(req, res, next) {
     hit();
     calcScore.playerScoreF();
     aceP(track.playerArray);
+    bust();
+
 
     //will eventually need to check the score for now just want to add a card to the players hand
 
@@ -38,4 +35,4 @@ router.get('/', function(req, res, next) {
     res.render('index');
 });
 
-module.exports = router;
+module.exports = router;ts = router;

@@ -6,7 +6,9 @@ var score = {
     playerScore:'',
     split1Score:'',
     split2Score:'',
-    split3Score:''
+    split3Score:'',
+    playerBust:false,
+    naturalBlackjack:false,
 };
 
 module.exports= score;
