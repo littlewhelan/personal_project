@@ -10,6 +10,7 @@ var score = {
     playerBust:false,
     naturalBlackjackPlayer:false,
     naturalBlackjackDealer:false,
+    dealersFirstCardIsAce:false,
 };
 
 

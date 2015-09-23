@@ -9,7 +9,8 @@ var aceP = require('../models/checkAcePlayer');
 var aceD = require('../models/checkAceDealer');
 var natBJackP = require('../models/naturalBlJP');
 var natBJackD = require('../models/naturalBlJD');
-var blJPay = require('../modles/blackjackPayout');
+//var blJPay = require('../models/blackjackPayout');
+var dealFirst = require('../models/dealersFirstCard');
 
 
 //this will get the cards to deal the hand
@@ -21,8 +22,10 @@ router.get('/', function(req, res, next) {
     calcScore.playerScoreF();
     aceP(track.playerArray);
     aceD(track.dealerArray);
+    dealFirst(track.dealerArray);
     natBJackP();
     natBJackD();
+
     //compare player blackjack to dealer blackjack and payout if applicable
     //blJPay();//within this function it should end the hand
     //after this the the player will hit, stand, double or split which will route to a different page
@@ -36,6 +39,8 @@ router.get('/', function(req, res, next) {
     console.log(score.dealerScore);
     console.log('is this a natural blackjack for the dealer');
     console.log(score.naturalBlackjackDealer);
+    console.log('Is the dealers first Card an Ace');
+    console.log(score.dealersFirstCardIsAce);
 
     console.log('this is the player array ');
     console.log(track.playerArray );
