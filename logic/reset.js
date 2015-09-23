@@ -9,6 +9,11 @@ var emptyAllHands = function() {
     emptyHands.split1Empty();
     emptyHands.split2Empty();
     emptyHands.split3Empty();
+    score.dealerBust = false,
+    score.playerBust = false,
+    score.split1Bust = false,
+    score.split2Bust = false,
+    score.split3Bust = false,
     score.dealersFirstCardIsAce = false;
     score.naturalBlackjackDealer = false;
     score.naturalBlackjackPlayer = false;

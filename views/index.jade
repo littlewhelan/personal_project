@@ -9,13 +9,13 @@ block content
     div#playerHand.row
       div.col-sm-3.cards
       div.col-sm-3.cards
-    div#split1Hand.row
+    div(ng-show="split1")#split1Hand.row
       div.col-sm-3.cards
       div.col-sm-3.cards
-    div#split2Hand.row
+    div(ng-show="split2")#split2Hand.row
       div.col-sm-3.cards
       div.col-sm-3.cards
-    div#split3Hand.row
+    div(ng-show="split3")#split3Hand.row
       div.col-sm-3.cards
       div.col-sm-3.cards
     div.gamePlayButtons

@@ -11,7 +11,7 @@ var bank = {
 
     split2Bet: this.playerBet,
 
-    split3Bet: this.playerBet
+    split3Bet: this.playerBet,
 
 };
 
