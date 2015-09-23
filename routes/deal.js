@@ -2,21 +2,22 @@ var express = require('express');
 var router = express.Router();
 var deal = require('../logic/deal');
 var track = require('../logic/trackingDeck');
-var emptyHands =require('../logic/emptyHandsAll');
+var reset =require('../logic/emptyHandsAll');
 var score = require('../logic/scoreVars');
 var calcScore = require('../logic/calcScores');
 var aceP = require('../logic/checkAcePlayer');
 var aceD = require('../logic/checkAceDealer');
 var natBJackP = require('../logic/naturalBlJP');
 var natBJackD = require('../logic/naturalBlJD');
-//var blJPay = require('../logic/blackjackPayout');
+var blJPay = require('../logic/blackjackPayout');
 var dealFirst = require('../logic/dealersFirstCard');
+var bank = require('../logic/bankVars');
 
 
 //this will get the cards to deal the hand
 router.get('/', function(req, res, next) {
 
-    emptyHands();
+    reset();
     deal();
     calcScore.dealerScoreF();
     calcScore.playerScoreF();
@@ -25,6 +26,7 @@ router.get('/', function(req, res, next) {
     dealFirst(track.dealerArray);
     natBJackP();
     natBJackD();
+    blJPay();
 
     //compare player blackjack to dealer blackjack and payout if applicable
     //blJPay();//within this function it should end the hand
@@ -48,11 +50,8 @@ router.get('/', function(req, res, next) {
     console.log(score.playerScore);
     console.log('is this a natural blackjack for the player');
     console.log(score.naturalBlackjackPlayer);
-
-
-
-    //console.log('this is the players bank');
-    //console.log(bank.playersBank); //think this is stuck at 1000
+    console.log('this is the players bank');
+    console.log(bank.playersBank); //think this is stuck at 1000
 
     console.log('this is the number of cards in the deck if it is not 52 or a multiple of 52 you have a problem!');
     console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length + track.split1Array.length + track.split2Array.length + track.split3Array.length);
