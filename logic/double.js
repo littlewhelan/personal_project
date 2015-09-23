@@ -7,6 +7,9 @@ var calcScore = require('./calcScores');
 var aceP = require('./checkAcePlayer');
 var pBust = require('./playerBust');
 var dFin = require('./dealerHit');
+var comp = require('./compareIFFNotBust');
+var dBust = require('./dealerBust');
+
 
 var double = function() {
 
@@ -20,14 +23,16 @@ var double = function() {
     calcScore.playerScoreF();
     //update the value of the hand if there is an ace
     aceP();
-    //check to see if the player busted and if yes subtract from player bank
+    //check to see if the player busted
     pBust();
     //complete the dealers hand
     dFin();
+    //check to see if the dealer bust
+    dBust();
+    //compares the value of the hands if neither have bust and pay out the bets
+    comp();
+    //bets have been paid for the hand now check for splits
 
-
-
-    //if the players hand is more than 21 and there have been no splits the round is over
 };
 
 

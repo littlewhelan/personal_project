@@ -8,19 +8,17 @@ var score = require('./scoreVars');
 
 //this will need to add one more card to the hand of the dealer
 
-var dealerCompleteHand = {
+var dealerHit= function () {
 
-    dealerHit: function() {
+    while (score.dealerScore < 17 && score.playerBust == false){
         track.dealerArray.push(draw());
         calcScore.dealerScoreF();
-        aceD(track.dealerArray);},
+        aceD(track.dealerArray);
+    }
 
-    complete: function() {
-        while (score.dealerScore < 17 && score.playerBust == false)
-        {
-            this.dealerHit();}
-    },
+
+
 };
 
 
-module.exports = dealerCompleteHand;
+module.exports = dealerHit;
