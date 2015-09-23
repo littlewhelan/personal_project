@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var hit = require('../models/hit');
-var track = require('../models/trackingDeck');
-var calcScore = require('../models/calcScores');
-var score = require('../models/scoreVars');
-var aceP = require('../models/checkAcePlayer');
-var bust = require ('../models/playerBust');
+var hit = require('../logic/hit');
+var track = require('../logic/trackingDeck');
+var calcScore = require('../logic/calcScores');
+var score = require('../logic/scoreVars');
+var aceP = require('../logic/checkAcePlayer');
+var bust = require ('../logic/playerBust');
 
 //set the route for the hit button
 router.get('/', function(req, res, next) {

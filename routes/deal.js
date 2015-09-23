@@ -1,16 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var deal = require('../models/deal');
-var track = require('../models/trackingDeck');
-var emptyHands =require('../models/emptyHandsAll');
-var score = require('../models/scoreVars');
-var calcScore = require('../models/calcScores');
-var aceP = require('../models/checkAcePlayer');
-var aceD = require('../models/checkAceDealer');
-var natBJackP = require('../models/naturalBlJP');
-var natBJackD = require('../models/naturalBlJD');
-//var blJPay = require('../models/blackjackPayout');
-var dealFirst = require('../models/dealersFirstCard');
+var deal = require('../logic/deal');
+var track = require('../logic/trackingDeck');
+var emptyHands =require('../logic/emptyHandsAll');
+var score = require('../logic/scoreVars');
+var calcScore = require('../logic/calcScores');
+var aceP = require('../logic/checkAcePlayer');
+var aceD = require('../logic/checkAceDealer');
+var natBJackP = require('../logic/naturalBlJP');
+var natBJackD = require('../logic/naturalBlJD');
+//var blJPay = require('../logic/blackjackPayout');
+var dealFirst = require('../logic/dealersFirstCard');
 
 
 //this will get the cards to deal the hand

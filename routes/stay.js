@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var stay = require('../models/stay');
-var track = require('../models/trackingDeck');
+var stay = require('../logic/stay');
+var track = require('../logic/trackingDeck');
 //set the route for the stay button
 router.get('/', function(req, res, next) {
 
