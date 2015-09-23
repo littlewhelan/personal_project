@@ -32,7 +32,6 @@ var double = function() {
     //compares the value of the hands if neither have bust and pay out the bets
     comp();
     //bets have been paid for the hand now check for splits
-
 };
 
 
