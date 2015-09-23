@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var deal = require('../logic/deal');
+var deal = require('../logic/dealCards');
 var track = require('../logic/trackingDeck');
 var reset =require('../logic/reset');
 var score = require('../logic/scoreVars');
@@ -12,11 +12,16 @@ var natBJackD = require('../logic/naturalBlJD');
 var blJPay = require('../logic/blackjackPayout');
 var dealFirst = require('../logic/dealersFirstCard');
 var bank = require('../logic/bankVars');
-var end = require('../logic/endHand');
+var endAfterBlJ = require('../logic/endHandAfterBlJ');
+//var splits = require('../logic/checkSplitArrays);
 
 
 //this will get the cards to deal the hand
 router.get('/', function(req, res, next) {
+
+    //checks to see if splits are empty/ is no should empty player hand transfer cards in and replay that hand and bet without closing out the dealers hand
+    //splits();
+
     // resets hands and to have no cards and natBlJ values to false
     reset();
     // deals two cards to the player and the dealer
@@ -39,8 +44,8 @@ router.get('/', function(req, res, next) {
    //pays out the bet if the dealer or the player has any form of blackjack
     blJPay();
 
-     //this will need to end the hand if the bet was paid out due to blackjack
-    //end();
+     //this will check if a BlJ ended the hand, is so it will reset tracking arrays
+    //endAfterBlJ();
 
 
     //does the dealer have blackjack (with ace up)

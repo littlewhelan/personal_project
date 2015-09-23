@@ -38,8 +38,7 @@ var cards = {
         },
 
     theDeck: function() {
-
-      return this.shuffleDeck(this.deck());
+     return this.shuffleDeck(this.deck());
     }
     };
 
