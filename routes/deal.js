@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var deal = require('../logic/deal');
 var track = require('../logic/trackingDeck');
-var reset =require('../logic/emptyHandsAll');
+var reset =require('../logic/reset');
 var score = require('../logic/scoreVars');
 var calcScore = require('../logic/calcScores');
 var aceP = require('../logic/checkAcePlayer');
@@ -12,22 +12,38 @@ var natBJackD = require('../logic/naturalBlJD');
 var blJPay = require('../logic/blackjackPayout');
 var dealFirst = require('../logic/dealersFirstCard');
 var bank = require('../logic/bankVars');
+var end = require('../logic/endHand');
 
 
 //this will get the cards to deal the hand
 router.get('/', function(req, res, next) {
-
+    // resets hands and to have no cards and natBlJ values to false
     reset();
+    // deals two cards to the player and the dealer
     deal();
+    //gets the score of the player and the dealer, takes into account the first two cards with a value of 1 for an ace
     calcScore.dealerScoreF();
     calcScore.playerScoreF();
+
+    //this checks for an ace in the hand and recalculates the score
     aceP(track.playerArray);
     aceD(track.dealerArray);
+
+    //checks to see if the dealer has an ace face up
     dealFirst(track.dealerArray);
+
+    //does the player or the dealer have a natural blackjack with two cards
     natBJackP();
     natBJackD();
+
+   //pays out the bet if the dealer or the player has any form of blackjack
     blJPay();
 
+     //this will need to end the hand if the bet was paid out due to blackjack
+    //end();
+
+
+    //does the dealer have blackjack (with ace up)
     //compare player blackjack to dealer blackjack and payout if applicable
     //blJPay();//within this function it should end the hand
     //after this the the player will hit, stand, double or split which will route to a different page
@@ -51,7 +67,7 @@ router.get('/', function(req, res, next) {
     console.log('is this a natural blackjack for the player');
     console.log(score.naturalBlackjackPlayer);
     console.log('this is the players bank');
-    console.log(bank.playersBank); //think this is stuck at 1000
+    console.log(bank.playersBank);
 
     console.log('this is the number of cards in the deck if it is not 52 or a multiple of 52 you have a problem!');
     console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length + track.split1Array.length + track.split2Array.length + track.split3Array.length);

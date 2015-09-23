@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var empty = require('./emptyHandsAll');
+var empty = require('./reset');
 var bet =  require('./bankVars');
 var track = require('./trackingDeck');
 var score =require('./scoreVars');
