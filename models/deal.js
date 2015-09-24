@@ -12,7 +12,8 @@ var natBJackD = require('../logic/naturalBlJD');
 var blJPay = require('../logic/blackjackPayout');
 var dealFirst = require('../logic/dealersFirstCard');
 var bank = require('../logic/bankVars');
-var splits = require('../logic/checkSplitArrays');
+var checkForSplits = require('../logic/checkSplitArraysAreEmpty');
+var canSplit = require('../logic/playerCanSplit');
 
 var dealMainHand = function() {
     // resets hands and to have no cards and natBlJ values to false
@@ -32,8 +33,10 @@ var dealMainHand = function() {
     natBJackD();
     //pays out the bet if the dealer or the player has any form of blackjack
     blJPay();
+    //check can this hand be split
+    canSplit(track.playerArray);
     //check if split arrays are empty
-    splits();
+    checkForSplits();
     // if true will need to run the deal function for split1, split2, split3  also at this point the deal button should be blocked until the splits are complete
 };
 

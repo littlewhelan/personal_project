@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var dealMainHand = require('../models/deal')
+var dealMainHand = require('../models/deal');
 
 //these are needed for the console logs only
 var track = require('../logic/trackingDeck');
@@ -21,6 +21,8 @@ router.get('/', function(req, res, next) {
     console.log(score.dealersFirstCardIsAce);
     console.log('this is the player stats ');
     console.log(track.playerArray );
+    console.log('Can the player Split');
+    console.log(score.possibleToSplitPlayer);
     console.log(score.playerScore);
     console.log('is this a natural blackjack for the player');
     console.log(score.naturalBlackjackPlayer);
