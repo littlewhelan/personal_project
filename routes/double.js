@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var track = require('../logic/trackingDeck');
-var draw = require('../logic/drawCard');
+var hit = require('../logic/drawOneMoreCard');
 var bank = require('../logic/bankVars');
 var calcScore = require('../logic/calcScores');
 var aceP = require('../logic/checkAcePlayer');
@@ -9,6 +9,7 @@ var pBust = require('../logic/playerBust');
 var dFin = require('../logic/dealerFinish');
 var comp = require('../logic/compareScores');
 var dBust = require('../logic/dealerBust');
+var score = require('../logic/scoreVars');
 
 
 //set the route for the double button
@@ -17,7 +18,7 @@ router.get('/', function(req, res, next) {
  // double the current bet that the player made
  bank.playerBet = (bank.playerBet*2);
  //add one card to the players hand
- track.playerArray.push(draw());
+ hit();
  // recheck the value of the hand
  calcScore.playerScoreF();
  //update the value of the hand if there is an ace
