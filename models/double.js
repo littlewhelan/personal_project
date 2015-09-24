@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var track = require('../logic/trackingDeck');
-var draw = require('../logic/drawCard');
+var hit = require('../logic/drawOneMoreCard');
 var bank = require('../logic/bankVars');
 var calcScore = require('../logic/calcScores');
 var aceP = require('../logic/checkAcePlayer');
@@ -13,17 +13,15 @@ var dBust = require('../logic/dealerBust');
 
 var double = function() {
 
-    // double the bet that the player made
+    // double the current bet that the player made
     bank.playerBet = (bank.playerBet*2);
-
     //add one card to the players hand
-    track.playerArray.push(draw());
-
+    hit();
     // recheck the value of the hand
     calcScore.playerScoreF();
     //update the value of the hand if there is an ace
-    aceP();
-    //check to see if the player busted
+    aceP(track.playerArray);
+    //check to see if the player busted if true then the bet is deducted
     pBust();
     //complete the dealers hand
     dFin();
@@ -32,6 +30,8 @@ var double = function() {
     //compares the value of the hands if neither have bust and pay out the bets
     comp();
     //bets have been paid for the hand now check for split
+
+
 };
 
 

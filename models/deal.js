@@ -14,10 +14,7 @@ var dealFirst = require('../logic/dealersFirstCard');
 var bank = require('../logic/bankVars');
 var splits = require('../logic/checkSplitArrays');
 
-
-var deal = function () {
-    //checks to see if splits are empty/ is no should empty player hand transfer cards in and replay that hand and bet without closing out the dealers hand
-    //splits();
+var dealMainHand = function() {
     // resets hands and to have no cards and natBlJ values to false
     reset();
     // deals two cards to the player and the dealer
@@ -38,7 +35,6 @@ var deal = function () {
     //check if split arrays are empty
     splits();
     // if true will need to run the deal function for split1, split2, split3  also at this point the deal button should be blocked until the splits are complete
-
 };
 
-module.exports = deal;
+module.exports = dealMainHand;
