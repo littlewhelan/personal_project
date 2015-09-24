@@ -6,8 +6,8 @@ var bank = require('./bankVars');
 var calcScore = require('./calcScores');
 var aceP = require('./checkAcePlayer');
 var pBust = require('./playerBust');
-var dFin = require('./dealerHit');
-var comp = require('./compareIFFNotBust');
+var dFin = require('./dealerFinish');
+var comp = require('./compareScores');
 var dBust = require('./dealerBust');
 
 
@@ -31,7 +31,7 @@ var double = function() {
     dBust();
     //compares the value of the hands if neither have bust and pay out the bets
     comp();
-    //bets have been paid for the hand now check for splits
+    //bets have been paid for the hand now check for split
 };
 
 

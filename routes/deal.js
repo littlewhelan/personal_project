@@ -44,15 +44,7 @@ router.get('/', function(req, res, next) {
     blJPay();
     //check if split arrays are empty
     splits();
-
-
-    //does the dealer have blackjack (with ace up)
-    //compare player blackjack to dealer blackjack and payout if applicable
-    //blJPay();//within this function it should end the hand
-    //after this the the player will hit, stand, double or split which will route to a different page
-
-
-
+    // if true will need to run the deal function for split1, split2, split3  also at this point the deal button should be blocked until the splits are complete
 
     console.log('this is the dealer array');
     console.log(track.dealerArray );

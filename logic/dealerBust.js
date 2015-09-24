@@ -9,6 +9,7 @@ var bank = require('./bankVars');
 var dealerBust = function(){
     if(score.dealerScore > 21){
         score.dealerBust = true;
+            bank.playersBank += bank.playerBet;
     }
 
 };

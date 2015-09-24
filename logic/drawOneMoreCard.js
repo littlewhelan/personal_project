@@ -5,9 +5,9 @@ var track = require('./trackingDeck');
 
 //this will need to add one more card to the hand of the player
 
-var hit = function() {
+var drawACard = function() {
     track.playerArray.push(draw());
 };
 
 
-module.exports = hit;
+module.exports = drawACard;

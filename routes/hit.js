@@ -1,32 +1,45 @@
 var express = require('express');
 var router = express.Router();
-var hit = require('../logic/hit');
+var hit = require('../logic/drawOneMoreCard');
 var track = require('../logic/trackingDeck');
 var calcScore = require('../logic/calcScores');
 var score = require('../logic/scoreVars');
 var aceP = require('../logic/checkAcePlayer');
-var bust = require ('../logic/playerBust');
+var bustP = require ('../logic/playerBust');
+var bank = require('../logic/bankVars');
+
 
 //set the route for the hit button
 router.get('/', function(req, res, next) {
 
+    //draw one more card
     hit();
+    //check the new score
     calcScore.playerScoreF();
+    //see if there is an ace and recalculate the score
     aceP(track.playerArray);
-    bust();
-
-
-    //will eventually need to check the score for now just want to add a card to the players hand
+    //Check to see if the player bust if true subtract the bet
+    bustP();
 
     console.log('this is the dealer array');
     console.log(track.dealerArray );
-    console.log('this is is dealer score');
+    console.log('this is the dealer score');
     console.log(score.dealerScore);
+    console.log('is this a natural blackjack for the dealer');
+    console.log(score.naturalBlackjackDealer);
+    console.log('Is the dealers first Card an Ace');
+    console.log(score.dealersFirstCardIsAce);
 
     console.log('this is the player array ');
     console.log(track.playerArray );
     console.log('this is the player score');
     console.log(score.playerScore);
+    console.log('is this a natural blackjack for the player');
+    console.log(score.naturalBlackjackPlayer);
+    console.log('this is the players bank');
+    console.log(bank.playersBank);
+    console.log('Did the player bust');
+    console.log(score.playerBust);
 
     console.log('this is the number of cards in the deck if it is not 52 or a multiple of 52 you have a problem!');
     console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length + track.split1Array.length + track.split2Array.length + track.split3Array.length);
@@ -35,4 +48,4 @@ router.get('/', function(req, res, next) {
     res.render('index');
 });
 
-module.exports = router;ts = router;
+module.exports = router;
