@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var score = {
+    playerHandActive:true,
+    split1Active:false,
+    split2Active:false,
+    split3:false,
     dealerScore:'',
     playerScore:'',
     split1Score:'',

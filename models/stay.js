@@ -16,6 +16,9 @@ var stay = function () {
     calcScore.dealerScoreF();
     //update the value of the hand if there is an ace
     aceD(track.playerArray);
+    //check to see if split1 is empty
+
+
     //complete the dealers hand
     dFin();
     //check to see if the dealer bust if yes pays the player
