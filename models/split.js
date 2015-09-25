@@ -11,14 +11,14 @@ var splitOriginalHand = function() {
         track.split1Array.push(track.playerArray.shift());
         calc.playerScoreF();
         score.possibleToSplitPlayer = false;
-    //} else if(score.possibleToSplitPlayer == true && track.split2Array.length < 1){
-    //    track.split2Array.push(track.playerArray.shift());
-    //    calc.playerScoreF();
-    //    score.possibleToSplitPlayer = false;
-    //} else if (score.possibleToSplitPlayer == true && track.split3Array.length < 1) {
-    //    track.split3Array.push(track.playerArray.shift());
-    //    calc.playerScoreF();
-    //    score.possibleToSplitPlayer = false;
+    } else if(score.possibleToSplitPlayer == true && track.split2Array.length < 1){
+        track.split2Array.push(track.playerArray.shift());
+        calc.playerScoreF();
+        score.possibleToSplitPlayer = false;
+    } else if (score.possibleToSplitPlayer == true && track.split3Array.length < 1) {
+        track.split3Array.push(track.playerArray.shift());
+        calc.playerScoreF();
+        score.possibleToSplitPlayer = false;
 
     }
 };

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var hit = require('../../logic/singleCard');
+var hit = require('../../logic/split1Logic/singleCard');
 var track = require('../../logic/trackingDeck');
 var calcScore = require('../../logic/calcScores');
 var score = require('../../logic/scoreVars');
