@@ -15,7 +15,7 @@ var deal = function() {
     };
 
     // makes sure there are cards in the deck or shuffles up a new deck
-    if(track.startDeckArray.length <= 8){
+    if(track.startDeckArray.length <= 12) {
         track.startDeckArray = newDeck();
         track.discardArray =[];
     };
