@@ -18,6 +18,10 @@ var emptyAllHands = function() {
     score.naturalBlackjackDealer = false;
     score.naturalBlackjackPlayer = false;
     score.playerBust = false;
+    score.playerHandActive = true;
+    score.split1Active = false;
+    score.split2Active = false;
+    score.split3Active = false;
 };
 
 

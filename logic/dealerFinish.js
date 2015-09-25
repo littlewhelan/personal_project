@@ -15,10 +15,6 @@ var dealerHit= function () {
         calcScore.dealerScoreF();
         aceD(track.dealerArray);
     }
-
-
-
 };
-
 
 module.exports = dealerHit;

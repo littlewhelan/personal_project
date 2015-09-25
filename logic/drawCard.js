@@ -7,7 +7,7 @@ var track = require('./trackingDeck');
 
 var drawCard  = function() {
 
-  var aCard =  track.startDeckArray.shift();
-    return aCard;
+  return track.startDeckArray.shift();
+
 };
-module.exports =drawCard;
+module.exports = drawCard;

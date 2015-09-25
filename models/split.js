@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var deal = require('../logic/split1Logic/dealSplit1');
-var canSplit1 = require('../logic/split1Logic/possibleSplit1');
-
+var score = require('../logic/scoreVars');
+var track = require ('../logic/trackingDeck');
 
 var splitOriginalHand = function() {
-    //need to separate out the cards to two arrays
-    //need to finish
-    deal();
-    canSplit1();
+
+    if(score.possibleToSplitPlayer == true) {
+        //need to move one card to split array
+        var split1 = track.playerArray.shift();
+       track.split1Array.push(split1);
+    }
 };
 
 module.exports = splitOriginalHand;

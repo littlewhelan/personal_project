@@ -6,6 +6,7 @@ var bank = require('../logic/bankVars');
 
 var score = require('../logic/scoreVars');
 var double = require('../models/double');
+
 //set the route for the double button
 router.get('/', function(req, res, next) {
 
