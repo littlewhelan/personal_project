@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
 
         stay();
 
-
+    console.log('is split1 Active');
+    console.log(score.split1Active);
     console.log('this is the dealer array');
     console.log(track.dealerArray );
     console.log('this is the dealer score');

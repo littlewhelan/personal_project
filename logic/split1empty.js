@@ -4,13 +4,14 @@ var score = require('./scoreVars');
 var dFin = require('./dealerFinish');
 var dBust = require('./dealerBust');
 var comp = require('./compareScores');
+var track = require('./trackingDeck');
 
 var checkSplits = function () {
 
-    if(score.split1Score.length > 0) {
+    if(track.split1Array.length > 0) {
         score.split1Active = true;
         score.playerHandActive = false;
-    } else if(score.split1Score.length == 0) {
+    } else if(track.split1Array.length == 0) {
         dFin();
         dBust();
         comp();
