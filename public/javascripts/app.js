@@ -13,32 +13,83 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             $scope.card = response.data
         });
     };
+
+
+    //-----------------------------------
+
+    //-----THIS WORKS ON MAIN HIT HAND WITH NO SPLITS-----
+
+    //$scope.hitBtn = function () {
+    //    $http({
+    //        method: 'GET',
+    //        url: '/hit'
+    //    }).then(function (response) {
+    //        console.log('Place scores here');
+    //        console.log("This is the hit button ajax call");
+    //        $scope.card = response.data
+    //    });
+    //};
+
+
+    //-----------------------------------
+
     //this will make a call to get a card for the hit function
     //the if statement will allow the hit button to select the correct route
-    //how do I get this to hook to the model
-     if (score.playerHandActive == true) {
-         $scope.hitBtn = function () {
-             $http({
-                 method: 'GET',
-                 url: '/hit'
-             }).then(function (response) {
-                 console.log('Place scores here');
-                 console.log("This is the hit button ajax call");
-                 $scope.card = response.data
-             });
-         };
-     } else if (score.split1Active == true) {
-         $scope.hitBtn = function () {
-             $http({
-                 method: 'GET',
-                 url: '/hitSplit1'
-             }).then(function (response) {
-                 console.log('Place scores here');
-                 console.log("This is the hit button ajax call");
-                 $scope.card = response.data
-             });
-         };
-     }
+    //how do I get this to hook to the model........
+
+
+    $scope.hitBtn = function () {
+        $http({
+            method: 'GET',
+            url: '/activeHands'
+        }).then(function (response) {
+            console.log("The player hand is active");
+            $scope.active = response.data.playerHandActive;
+
+            if ($scope.active == true) {
+                    $scope.hitBtn = function () {
+                        $http({
+                            method: 'GET',
+                            url: '/hit'
+                        }).then(function (response) {
+                            console.log('hit Player Route');
+                            $scope.card = response.data
+                        });
+                    };
+            }
+        });
+    };
+
+
+    //-----------------------------------
+
+    //-----------------------------------
+
+    $scope.hitBtn = function () {
+        $http({
+            method: 'GET',
+            url: '/activeHands'
+        }).then(function (response) {
+           console.log("split1 is active");
+            $scope.active = response.data.split1Active;
+
+     if ($scope.active == true) {
+                $scope.hitBtn = function () {
+                    $http({
+                        method: 'GET',
+                        url: '/hitSplit1'
+                    }).then(function (response) {
+                        console.log('hitSplit1Route!!!!!!');
+
+                        $scope.card = response.data
+                    });
+                };
+          }
+        });
+    };
+
+    //-----------------------------------
+
     //this will make a call to complete the dealers hand
     $scope.stayBtn = function() {
         $http({

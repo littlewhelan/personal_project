@@ -13,6 +13,7 @@ var stay = require('./routes/stay');
 var split = require('./routes/split');
 var rules = require('./routes/rules');
 var hitSplit1 = require('./routes/hitSplit1');
+var activeHandler = require('./routes/activeHands');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/stay', stay);
 app.use('/split', split);
 app.use('/rules', rules);
 app.use('/hitSplit1', hitSplit1);
+app.use('/activeHands',activeHandler);
 
 
 

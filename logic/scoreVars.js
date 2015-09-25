@@ -1,5 +1,3 @@
-var express = require('express');
-var router = express.Router();
 
 var score = {
     playerHandActive:true,
@@ -24,7 +22,7 @@ var score = {
     split3Bust:false,
     naturalBlackjackPlayer:false,
     naturalBlackjackDealer:false,
-    dealersFirstCardIsAce:false,
+    dealersFirstCardIsAce:false
 };
 
 
