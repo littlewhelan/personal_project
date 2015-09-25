@@ -14,16 +14,31 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
         });
     };
     //this will make a call to get a card for the hit function
-    $scope.hitBtn = function() {
-        $http({
-        method: 'GET',
-        url: '/hit'
-    }).then(function (response) {
-        console.log('Place scores here');
-        console.log("This is the hit button ajax call");
-        $scope.card = response.data
-    });
-};
+    //the if statement will allow the hit button to select the correct route
+    //how do I get this to hook to the model
+     if (score.playerHandActive == true) {
+         $scope.hitBtn = function () {
+             $http({
+                 method: 'GET',
+                 url: '/hit'
+             }).then(function (response) {
+                 console.log('Place scores here');
+                 console.log("This is the hit button ajax call");
+                 $scope.card = response.data
+             });
+         };
+     } else if (score.split1Active == true) {
+         $scope.hitBtn = function () {
+             $http({
+                 method: 'GET',
+                 url: '/hitSplit1'
+             }).then(function (response) {
+                 console.log('Place scores here');
+                 console.log("This is the hit button ajax call");
+                 $scope.card = response.data
+             });
+         };
+     }
     //this will make a call to complete the dealers hand
     $scope.stayBtn = function() {
         $http({

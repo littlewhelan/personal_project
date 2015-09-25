@@ -1,21 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var cards = require('../logic/cards');
+var hit = require('../models/split1/hitSplit1');
 var track = require('../logic/trackingDeck');
 var score = require('../logic/scoreVars');
 var bank = require('../logic/bankVars');
-var stay = require('../models/stay');
 
 
-//set the route for the stay button
+//set the route for the hit button
 router.get('/', function(req, res, next) {
 
-        stay();
+    hit();
 
-    console.log('is split1 Active');
-    console.log(score.split1Active);
-    console.log('this is the split array, it should have two crads');
-    console.log(track.split1Array);
     console.log('this is the dealer array');
     console.log(track.dealerArray );
     console.log('this is the dealer score');
@@ -33,13 +28,14 @@ router.get('/', function(req, res, next) {
     console.log(score.naturalBlackjackPlayer);
     console.log('this is the players bank');
     console.log(bank.playersBank);
+    console.log('Did the player bust');
+    console.log(score.playerBust);
 
     console.log('this is the number of cards in the deck if it is not 52 or a multiple of 52 you have a problem!');
     console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length + track.split1Array.length + track.split2Array.length + track.split3Array.length);
 
 
     res.render('index');
-
 });
 
 module.exports = router;

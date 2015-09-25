@@ -9,11 +9,11 @@ var emptyAllHands = function() {
     emptyHands.split1Empty();
     emptyHands.split2Empty();
     emptyHands.split3Empty();
-    score.dealerBust = false,
-    score.playerBust = false,
-    score.split1Bust = false,
-    score.split2Bust = false,
-    score.split3Bust = false,
+    score.dealerBust = false;
+    score.playerBust = false;
+    score.split1Bust = false;
+    score.split2Bust = false;
+    score.split3Bust = false;
     score.dealersFirstCardIsAce = false;
     score.naturalBlackjackDealer = false;
     score.naturalBlackjackPlayer = false;
@@ -22,6 +22,9 @@ var emptyAllHands = function() {
     score.split1Active = false;
     score.split2Active = false;
     score.split3Active = false;
+    score.split1Empty = true;
+    score.split2Empty = true;
+    score.split3Empty = true;
 };
 
 
