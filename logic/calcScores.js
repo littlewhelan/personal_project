@@ -1,97 +1,98 @@
-var express = require('express');
-var router = express.Router();
 var cards = require('./cards');
-var track = require('./trackingDeck');
-var score = require('./scoreVars');
+var vars = require('./vars');
 
  var scores = {
      createLoop: function(array){
-       var score = 0;
+       var sum = 0;
          array.forEach(function(element){
-             score += element.value;
+             sum += element.value;
          });
-         return score;
+         return sum;
      },
 
      dealerScoreF: function() {
-         score.dealerScore = this.createLoop(track.dealerArray);
+         vars.dealerScore = this.createLoop(vars.dealerArray);
          var aceHigh = 0;
-         track.dealerArray.forEach(function(element) {
+
+             if (vars.dealerArray[0].name == 'Ace') {
+                 vars.dealersFirstCardIsAce = true;
+             };
+
+         vars.dealerArray.forEach(function(element) {
              if (element.name == 'Ace') {
-                 aceHigh = score.dealerScore + 10;
+                 aceHigh = vars.dealerScore + 10;
              }
          });
          if(aceHigh == 21) {
-             score.dealerScore = 21;
-         } else if (aceHigh > score.dealerScore && aceHigh < 21 ) {
-             score.dealerScore = aceHigh;
+             vars.dealerScore = 21;
+         } else if (aceHigh > vars.dealerScore && aceHigh < 21 ) {
+             vars.dealerScore = aceHigh;
          }
-         return score.dealerScore;
+         return vars.dealerScore;
      },
 
      playerScoreF: function () {
-         score.playerScore = this.createLoop(track.playerArray);
+         vars.playerScore = this.createLoop(vars.playerArray);
              var aceHigh = 0;
-             track.playerArray.forEach(function(element) {
+             vars.playerArray.forEach(function(element) {
                  if (element.name == 'Ace') {
-                     aceHigh = score.playerScore + 10;
+                     aceHigh = vars.playerScore + 10;
                  }
              });
              if(aceHigh == 21) {
-                 score.playerScore = 21;
-             } else if (aceHigh > score.playerScore && aceHigh < 21 ) {
-                 score.playerScore = aceHigh;
+                 vars.playerScore = 21;
+             } else if (aceHigh > vars.playerScore && aceHigh < 21 ) {
+                 vars.playerScore = aceHigh;
              }
-        return score.playerScore;
+        return vars.playerScore;
      },
 
      split1ScoreF: function () {
-         score.split1Score = this.createLoop(track.split1Array);
+         vars.split1Score = this.createLoop(vars.split1Array);
          var aceHigh = 0;
-             track.split1Array.forEach(function(element) {
+             vars.split1Array.forEach(function(element) {
                  if (element.name == 'Ace') {
-                     aceHigh = score.split1Score + 10;
+                     aceHigh = vars.split1Score + 10;
                  }
              });
              if(aceHigh == 21) {
-                 score.split1Score = 21;
-             } else if (aceHigh > score.split1Score && aceHigh < 21 ) {
-                 score.split1Score = aceHigh;
+                 vars.split1Score = 21;
+             } else if (aceHigh > vars.split1Score && aceHigh < 21 ) {
+                 vars.split1Score = aceHigh;
              }
-         return  score.split1Score;
+         return  vars.split1Score;
      },
 
      split2ScoreF: function () {
-         score.split2Score = this.createLoop(track.split2Array);
+         vars.split2Score = this.createLoop(vars.split2Array);
              var aceHigh= 0;
-             track.split2Array.forEach(function(element) {
+             vars.split2Array.forEach(function(element) {
                  if (element.name == 'Ace') {
-                     aceHigh = score.split2Score + 10;
+                     aceHigh = vars.split2Score + 10;
                  }
              });
              if(aceHigh == 21) {
-                 score.split2Score = 21;
-             } else if (aceHigh > score.split2Score && aceHigh < 21 ) {
-                 score.split2Score = aceHigh;
+                 vars.split2Score = 21;
+             } else if (aceHigh > vars.split2Score && aceHigh < 21 ) {
+                 vars.split2Score = aceHigh;
              }
-         return score.split2Score;
+         return vars.split2Score;
      },
 
      split3ScoreF: function () {
-         score.split3Score = this.createLoop(track.split3Array);
+         vars.split3Score = this.createLoop(vars.split3Array);
          var aceHigh= 0;
-         track.split3Array.forEach(function(element) {
+         vars.split3Array.forEach(function(element) {
              if (element.name == 'Ace') {
-                 aceHigh = score.split3Score + 10;
+                 aceHigh = vars.split3Score + 10;
              }
          });
          if(aceHigh == 21) {
-             score.split3Score = 21;
-         } else if (aceHigh > score.split3Score && aceHigh < 21 ) {
-             score.split3Score = aceHigh;
+             vars.split3Score = 21;
+         } else if (aceHigh > vars.split3Score && aceHigh < 21 ) {
+             vars.split3Score = aceHigh;
          }
-         return score.split3Score;
+         return vars.split3Score;
      }
-
  };
 module.exports = scores;

@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var hit = require('../models/hit');
-var track = require('../logic/trackingDeck');
-var score = require('../logic/scoreVars');
-var bank = require('../logic/bankVars');
+var score = require('../logic/vars');
+var vars = require('../logic/vars');
 
 
 //set the route for the hit button
@@ -11,28 +10,10 @@ router.get('/', function(req, res, next) {
 
     hit();
 
-    console.log('this is the dealer array');
-    console.log(track.dealerArray );
-    console.log('this is the dealer score');
-    console.log(score.dealerScore);
-    console.log('is this a natural blackjack for the dealer');
-    console.log(score.naturalBlackjackDealer);
-    console.log('Is the dealers first Card an Ace');
-    console.log(score.dealersFirstCardIsAce);
-
-    console.log('this is the player array ');
-    console.log(track.playerArray );
-    console.log('this is the player score');
-    console.log(score.playerScore);
-    console.log('is this a natural blackjack for the player');
-    console.log(score.naturalBlackjackPlayer);
-    console.log('this is the players bank');
-    console.log(bank.playersBank);
-    console.log('Did the player bust');
-    console.log(score.playerBust);
-
+    console.log('dealer',vars.dealerArray,vars.dealerScore,'nBLJ',vars.naturalBlackjackDealer,'FirstAce',vars.dealersFirstCardIsAce);
+    console.log('this is the player stats',vars.playerArray,'split',vars.possibleToSplitPlayer,'score',vars.playerScore,'NBLJ',vars.naturalBlackjackPlayer,'bank',vars.playersBank);
     console.log('this is the number of cards in the deck if it is not 52 or a multiple of 52 you have a problem!');
-    console.log(track.startDeckArray.length + track.playerArray.length + track.dealerArray.length + track.discardArray.length + track.split1Array.length + track.split2Array.length + track.split3Array.length);
+    console.log(vars.startDeckArray.length + vars.playerArray.length + vars.dealerArray.length + vars.discardArray.length + vars.split1Array.length + vars.split2Array.length + vars.split3Array.length);
 
 
     res.render('index');
