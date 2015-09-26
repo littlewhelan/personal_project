@@ -25,6 +25,10 @@ var emptyAllHands = function() {
     score.split1Empty = true;
     score.split2Empty = true;
     score.split3Empty = true;
+    score.playerHandDone = false;
+    score.split1Done = false;
+    score.split2Done = false;
+    score.split3Done = false;
 };
 
 

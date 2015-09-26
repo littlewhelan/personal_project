@@ -5,7 +5,7 @@ var dFin = require('./dealerFinish');
 var dBust = require('./dealerBust');
 var comp = require('./compareScores');
 var track = require('./trackingDeck');
-var draw = require('./drawcard');
+var draw = require('./drawCard');
 
 var checkSplits = function () {
 

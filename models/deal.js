@@ -23,8 +23,8 @@ var dealMainHand = function() {
     calcScore.dealerScoreF();
     calcScore.playerScoreF();
     //this checks for an ace in the hand and recalculates the score
-    aceP(track.playerArray);
-    aceD(track.dealerArray);
+    //aceP(track.playerArray);
+    //aceD(track.dealerArray);
     //checks to see if the dealer has an ace face up
     dealFirst(track.dealerArray);
     //does the player or the dealer have a natural blackjack with two cards

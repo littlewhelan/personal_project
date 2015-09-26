@@ -10,6 +10,7 @@ var split1Bust = function(){
     if(score.split1Score > 21){
         score.split1Bust = true;
         bank.playersBank -= bank.playerBet;
+        score.split1Done = true;
     }
 
 };

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var hit = require('../logic/singleCard');
+var drawCard = require('../logic/singleCard');
 var track = require('../logic/trackingDeck');
 var calcScore = require('../logic/calcScores');
 var score = require('../logic/scoreVars');
@@ -14,7 +14,7 @@ var empty = require('../logic/areSplitsEmpty');
 var hitOriginalHand = function() {
 
     //draw one more card
-    hit();
+    drawCard();
     //check which splits are empty
     empty();
     //check if player can split if they have already split once/ie first card after split
