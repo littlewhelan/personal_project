@@ -20,10 +20,10 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             url: '/activeHands'
         }).then(function (response) {
             console.log("Checking what hand is active ");
-            $scope.player = response.data.playerHandActive;
+            $scope.player = response.data.playerActive;
             $scope.split1 = response.data.split1Active;
             $scope.split2 = response.data.split2Active;
-            $scope.split3= response.data.split3Active;
+            $scope.split3 = response.data.split3Active;
 
             if ($scope.player == true) {
                         $http({
@@ -80,7 +80,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
     //        url: '/activeHands'
     //    }).then(function (response) {
     //        console.log("Checking what hand is active ");
-    //        $scope.player = response.data.playerHandActive;
+    //        $scope.player = response.data.playerActive;
     //        $scope.split1 = response.data.split1Active;
     //        $scope.split2 = response.data.split2Active;
     //        $scope.split3= response.data.split3Active;
@@ -143,7 +143,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
     //        url: '/activeHands'
     //    }).then(function (response) {
     //        console.log("Checking what hand is active ");
-    //        $scope.player = response.data.playerHandActive;
+    //        $scope.player = response.data.playerActive;
     //        $scope.split1 = response.data.split1Active;
     //        $scope.split2 = response.data.split2Active;
     //        $scope.split3= response.data.split3Active;
@@ -212,7 +212,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
     //        url: '/activeHands'
     //    }).then(function (response) {
     //        console.log("Checking what hand is active ");
-    //        $scope.player = response.data.playerHandActive;
+    //        $scope.player = response.data.playerActive;
     //        $scope.split1 = response.data.split1Active;
     //        $scope.split2 = response.data.split2Active;
     //        $scope.split3= response.data.split3Active;

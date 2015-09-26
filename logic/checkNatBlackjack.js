@@ -5,6 +5,7 @@ var naturalBlackjack = function () {
     if(vars.dealerScore == 21 && vars.dealerArray.length == 2) {
         vars.naturalBlackjackDealer =true;
     }
+
     if(vars.playerScore == 21 && vars.playerArray.length == 2) {
         vars.naturalBlackjackPlayer = true;
     }
