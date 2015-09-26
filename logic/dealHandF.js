@@ -13,6 +13,7 @@ var deal = function() {
     };
     //deal two cards to the player and the dealer 
     vars.playerArray.push(cards.drawCard());
+    vars.dealerArray.push(cards.drawCard());
     vars.playerArray.push(cards.drawCard());
     vars.dealerArray.push(cards.drawCard());
 };
