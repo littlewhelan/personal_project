@@ -29,6 +29,10 @@ var emptyAllHands = function() {
     vars.split1Done = false;
     vars.split2Done = false;
     vars.split3Done = false;
+    vars.playerCanDouble = false;
+    vars.split1CanDouble = false;
+    vars.split2CanDouble = false;
+    vars.split3CanDouble = false;
 };
 
 

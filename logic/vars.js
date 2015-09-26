@@ -45,6 +45,11 @@ var score = {
     //bet that the player makes and the total amount the player has to bet with
     playersBank: 0, //||some point this will have to change,
     playerBet: 1, //||or the input Value some set value from the index page
+    //checking if it is possible to double
+    playerCanDouble:false,
+    split1CanDouble:false,
+    split2CanDouble:false,
+    split3CanDouble:false,
 };
 
 
