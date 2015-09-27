@@ -3,10 +3,11 @@ var vars = require('./vars');
 var cards = {
 
 //This is the card constructor set up
-    Card: function (name, suit, value) {
+    Card: function (name, suit, value, imgName) {
         this.name = name;
         this.suit = suit;
         this.value = (value > 10) ? 10 : this.value = value;
+        this.imgName= imgName;
     },
 //this will create an array with 52 objects (the cards)
     deck: function () {
@@ -16,7 +17,7 @@ var cards = {
 
         for (var s = 0; s < this.suit.length; s++) {
             for (var n = 0; n < this.name.length; n++) {
-                cards.push(new this.Card(this.name[n], this.suit[s], n + 1));
+                cards.push(new this.Card(this.name[n], this.suit[s], n + 1, this.name[n] + this.suit[s] +'.png'));
             }
         }
         return cards;

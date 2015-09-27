@@ -17,7 +17,7 @@ var splitPossible = {
         if (array[0].value == array[1].value && vars.split2Array.length == 2) {
             vars.split2CanSplit = true;
         }
-    },
+    }
 };
 
 module.exports = splitPossible;
