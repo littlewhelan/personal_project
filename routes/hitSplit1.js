@@ -9,8 +9,6 @@ var vars = require('../logic/vars');
 router.get('/', function(req, res, next) {
 
     hit();
-
-
     res.render('index');
 });
 
