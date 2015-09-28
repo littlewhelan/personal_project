@@ -4,13 +4,17 @@ var vars = require('../logic/vars');
 
 //will be the route of the split action
 router.get('/', function (req, res, next) {
-    var dataToSend = {
-        playerActive: vars.playerActive,
-        split1Active: vars.split1Active,
-        split2Active: vars.split2Active,
-        split3Active: vars.split3Active
-    };
-    res.json(dataToSend);
+        res.json(vars);
+
+
+
+    //var dataToSend = {
+    //    playerActive: vars.playerActive,
+    //    split1Active: vars.split1Active,
+    //    split2Active: vars.split2Active,
+    //    split3Active: vars.split3Active
+    //};
+    //res.json(dataToSend);
 });
 
 module.exports = router;

@@ -1,6 +1,61 @@
 var app = angular.module('blackJack', []);
 
-app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
+app.controller('playerCtrl',['$scope','$http', function($scope, $http) {
+    $scope.getPlayersCards = function(){
+        $http({
+            method: 'GET',
+            url: 'activeHands'
+        }).then(function(response){
+            $scope.player = response.data.vars.playerArray;
+        });
+    }
+}]);
+
+app.controller('dealerCtrl',['$scope','$http', function($scope, $http) {
+    $scope.getSplit1Cards = function(){
+        $http({
+            method: 'GET',
+            url: 'activeHands'
+        }).then(function(response){
+            $scope.dealer = response.data.vars.dealerArray;
+        });
+    }
+}]);
+
+app.controller('split1Ctrl',['$scope','$http', function($scope, $http) {
+    $scope.getSplit1Cards = function(){
+        $http({
+            method: 'GET',
+            url: 'activeHands'
+        }).then(function(response){
+            $scope.split1 = response.data.vars.split1Array;
+        });
+    }
+}]);
+
+app.controller('split2Ctrl',['$scope','$http', function($scope, $http) {
+    $scope.getPlayersCards = function(){
+        $http({
+            method: 'GET',
+            url: 'activeHands'
+        }).then(function(response){
+            $scope.split2 = response.data.vars.split2Array;
+        });
+    }
+}]);
+
+app.controller('split3Ctrl',['$scope','$http', function($scope, $http) {
+    $scope.getPlayersCards = function(){
+        $http({
+            method: 'GET',
+            url: 'activeHands'
+        }).then(function(response){
+            $scope.split3 = response.data.vars.split3Array;
+        });
+    }
+}]);
+
+app.controller('buttonCtrl',['$scope','$http', function($scope, $http) {
 
     //this will make a call to deal the hand for both the house and the player
     $scope.dealBtn = function() {

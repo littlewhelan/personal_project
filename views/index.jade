@@ -3,26 +3,26 @@ extends layout
 block content
   h1 Blackjack
   div#mainContainer.fluid
-    div#dealerHand.row
-      div.col-sm-3.cards
-      div.col-sm-3.cards
-    div(ng-repeat ="cards in playerHand")#playerHand.row
-      div.col-sm-3.cards
-      div.col-sm-3.cards
-    div(ng-show="split1")#split1Hand.row
-      div.col-sm-3.cards
-      div.col-sm-3.cards
-    div(ng-show="split2")#split2Hand.row
-      div.col-sm-3.cards
-      div.col-sm-3.cards
-    div(ng-show="split3")#split3Hand.row
-      div.col-sm-3.cards
-      div.col-sm-3.cards
-    div.gamePlayButtons
-      button(id='doubleBtn' ng-click='doubleBtn()') Double
-      button(id='splitBtn' ng-click='splitBtn()') Split
-      button(id='stayBtn' ng-click='stayBtn()') Stay
-      button(id='hitBtn' ng-click='hitBtn()') Hit
+    div(ng-controller='dealerCtrl')#dealerHand.row
+      div(ng-repeat ="cards in dealerHand").col-sm-3.cards
+        |{{cards.name+cards.suit}}
+    div(ng-controller='playerCtrl')#playerHand.row
+      div(ng-repeat ="cards in playerHand").col-sm-3.cards
+        |{{cards.name+cards.suit}}
+    div(ng-controller='split1Ctrl' ng-show ='false')#split1Hand.row
+      div(ng-repeat ="cards in split1Hand").col-sm-3.cards
+        |{{cards.name+cards.suit}}
+    div(ng-controller='split1Ctrl' ng-show ='false')#split2Hand.row
+      div(ng-repeat ="cards in split2Hand").col-sm-3.cards
+        |{{cards.name+cards.suit}}
+    div(ng-controller='split1Ctrl' ng-show ='false')#split3Hand.row
+      div(ng-repeat ="cards in split3Hand").col-sm-3.cards
+        |{{cards.name+cards.suit}}
+    div(ng-controller='buttonCtrl').gamePlayButtons
+      button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='false') Double
+      button(id='splitBtn' ng-click='splitBtn()' ng-show ='false') Split
+      button(id='stayBtn' ng-click='stayBtn()' ng-show ='true') Stay
+      button(id='hitBtn' ng-click='hitBtn()' ng-show ='true') Hit
       input(id='bet' type = 'number' min = 1 max = 100 placeholder='Bet')
-      button(id='dealBtn' ng-click='dealBtn()') Deal
+      button(id='dealBtn' ng-click='dealBtn()' ng-show ='true') Deal
     a(href='/rules') Rules
