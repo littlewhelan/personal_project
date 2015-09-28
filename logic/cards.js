@@ -2,7 +2,7 @@ var vars = require('./vars');
 
 var cards = {
 
-//This is the card constructor set up
+//This is the card constructor set upg
     Card: function (name, suit, value, imgName) {
         this.name = name;
         this.suit = suit;
