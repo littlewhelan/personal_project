@@ -1,56 +1,61 @@
 var app = angular.module('blackJack', []);
 
 app.controller('playerCtrl',['$scope','$http', function($scope, $http) {
-    $scope.getPlayersCards = function(){
+    $scope.getPlayersCards = function() {
         $http({
             method: 'GET',
             url: 'activeHands'
         }).then(function(response){
             $scope.player = response.data.vars.playerArray;
+            console.log($scope.player);
         });
     }
 }]);
 
 app.controller('dealerCtrl',['$scope','$http', function($scope, $http) {
-    $scope.getSplit1Cards = function(){
+    $scope.getDealerCards = function() {
         $http({
             method: 'GET',
             url: 'activeHands'
         }).then(function(response){
             $scope.dealer = response.data.vars.dealerArray;
+            console.log($scope.dealer);
         });
     }
 }]);
 
 app.controller('split1Ctrl',['$scope','$http', function($scope, $http) {
-    $scope.getSplit1Cards = function(){
+    $scope.getSplit1Cards = function() {
         $http({
             method: 'GET',
             url: 'activeHands'
         }).then(function(response){
             $scope.split1 = response.data.vars.split1Array;
+            console.log($scope.split1);
         });
     }
 }]);
 
 app.controller('split2Ctrl',['$scope','$http', function($scope, $http) {
-    $scope.getPlayersCards = function(){
+    $scope.getSplit2Cards = function() {
         $http({
             method: 'GET',
             url: 'activeHands'
         }).then(function(response){
             $scope.split2 = response.data.vars.split2Array;
+            console.log($scope.split2);
         });
     }
 }]);
 
 app.controller('split3Ctrl',['$scope','$http', function($scope, $http) {
-    $scope.getPlayersCards = function(){
+    $scope.getSplit3Cards = function() {
         $http({
             method: 'GET',
             url: 'activeHands'
         }).then(function(response){
             $scope.split3 = response.data.vars.split3Array;
+            console.log($scope.split3);
         });
     }
 }]);

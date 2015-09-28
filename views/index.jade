@@ -3,11 +3,11 @@ extends layout
 block content
   h1 Blackjack
   div#mainContainer.fluid
-    div(ng-controller='dealerCtrl')#dealerHand.row
+    div(ng-controller='dealerCtrl' ng-show ='true')#dealerHand.row
       div(ng-repeat ="cards in dealerHand").col-sm-3.cards
         |{{cards.name+cards.suit}}
-    div(ng-controller='playerCtrl')#playerHand.row
-      div(ng-repeat ="cards in playerHand").col-sm-3.cards
+    div(ng-controller='playerCtrl' ng-show ='true')#playerHand.row
+      div(ng-repeat ="cards in playerHand" ).col-sm-3.cards
         |{{cards.name+cards.suit}}
     div(ng-controller='split1Ctrl' ng-show ='false')#split1Hand.row
       div(ng-repeat ="cards in split1Hand").col-sm-3.cards
