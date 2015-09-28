@@ -1,7 +1,7 @@
 var emptyHands = require('./emptyHandsF');
 var vars = require('./vars');
 
-var emptyAllHands = function() {
+var reset = function() {
     //move all cards to discard pile
     emptyHands.dealerEmpty();
     emptyHands.playerEmpty();
@@ -36,8 +36,14 @@ var emptyAllHands = function() {
     vars.playerCanSplit = false;
     vars.split1CanSPlit = false;
     vars.split2CanSplit = false;
+    vars.playerCanHit = true;
+    vars.split1CanHit = true;
+    vars.split2CanHit = true;
+    vars.split3CanHit = true;
+    vars.allHandsDone = false;
+
 
 };
 
 
-module.exports = emptyAllHands;
+module.exports = reset;

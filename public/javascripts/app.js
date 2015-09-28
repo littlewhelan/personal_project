@@ -19,6 +19,14 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             $scope.split1Score = response.data.split1Score;
             $scope.split2Score = response.data.split2Score;
             $scope.split3Score = response.data.split3Score;
+            $scope.playersBank = response.data.playersBank;
+            $scope.playerBet = response.data.playerBet;
+            $scope.hideHitBtn = response.data.playerCanHit;
+            $scope.hideStayBtn = response.data.playerCanHit;
+            $scope.split1Active = response.data.split1Active;
+            $scope.split2Active = response.data.split2Active;
+            $scope.split3Active = response.data.split3Active;
+            $scope.allHandsDone = response.data.allHandsDone;
         });
 
     };
