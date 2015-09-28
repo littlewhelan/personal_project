@@ -3,6 +3,8 @@ var vars = require('./vars');
 var naturalBlackjack = function () {
 
     if(vars.dealerScore == 21 && vars.dealerArray.length == 2) {
+        vars.allHandsDone = true;
+        vars.playerCanHit = false;
         vars.naturalBlackjackDealer =true;
     }
 
