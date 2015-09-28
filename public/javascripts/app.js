@@ -9,8 +9,16 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
         }).then(function (response) {
             $scope.playerHand = response.data.playerArray;
             $scope.dealerHand = response.data.dealerArray;
+            $scope.split1Hand = response.data.split1Array;
+            $scope.split2Hand = response.data.split2Array;
+            $scope.split3Hand = response.data.split3Array;
             $scope.showSplitBtn = response.data.playerCanSplit;
             $scope.showDoubleBtn = response.data.playerCanDouble;
+            $scope.dealerScore = response.data.dealerScore;
+            $scope.playerScore = response.data.playerScore;
+            $scope.split1Score = response.data.split1Score;
+            $scope.split2Score = response.data.split2Score;
+            $scope.split3Score = response.data.split3Score;
         });
 
     };
@@ -162,6 +170,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             console.log("This is the stay double ajax call");
             $scope.card = response.data
         });
+        this.getInfo()
     };
 
 
@@ -232,7 +241,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
         }).then(function (response) {
             console.log("You are on the  btn call route ");
         });
-
+        this.getInfo()
     };
 //--------------------------------
 
