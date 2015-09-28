@@ -17,7 +17,7 @@ var doubleDown = {
                 vars.playerCanDouble = true;
             } else if (sum == 10  && vars.playerArray.length == 2 ) {
                 vars.playerCanDouble = true;
-            } else if( sum == 11  && vars.playerArray.length == 2 ) {
+            } else if( sum == 11  && vars.playerArray.length == 2 && vars.naturalBlackjackPlayer == false ) {
                 vars.playerCanDouble = true;
             }
     },

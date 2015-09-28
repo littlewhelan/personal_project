@@ -44,7 +44,7 @@ var score = {
     split3Array: [],
     //bet that the player makes and the total amount the player has to bet with
     playersBank: 1000,
-    playerBet: 4, //||or the input Value some set value from the index page
+    playerBet: 2, //||or the input Value some set value from the index page
     //checking if it is possible to double
     playerCanDouble:false,
     split1CanDouble:false,

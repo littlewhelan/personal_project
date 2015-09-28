@@ -15,6 +15,10 @@ var hitOriginalHand = function() {
     calc.playerScoreF();
     //Check to see if the player bust if true subtract the bet
     bust.player();
+    if(vars.split1Empty==true && vars.playerBust == true){
+        vars.allHandsDone =true;
+    }
+
 
 
 };

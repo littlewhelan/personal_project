@@ -19,6 +19,8 @@ var double = function() {
     //it will also compare the score if neither the dealer or the player bust
     check.split1();
     allHandsDone();
+    vars.playerCanDouble = false;
+    vars.playerCanHit = false;
 };
 
 

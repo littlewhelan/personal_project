@@ -41,6 +41,7 @@ var reset = function() {
     vars.split2CanHit = true;
     vars.split3CanHit = true;
     vars.allHandsDone = false;
+    vars.playerBet = 2;
 
 
 };
