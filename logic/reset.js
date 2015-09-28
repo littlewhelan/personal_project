@@ -33,6 +33,10 @@ var emptyAllHands = function() {
     vars.split1CanDouble = false;
     vars.split2CanDouble = false;
     vars.split3CanDouble = false;
+    vars.playerCanSplit = false;
+    vars.split1CanSPlit = false;
+    vars.split2CanSplit = false;
+
 };
 
 

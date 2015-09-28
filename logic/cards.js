@@ -40,7 +40,8 @@ var cards = {
     //take a card off the top of the deck
     drawCard: function () {
         return vars.startDeckArray.shift();
-    },
+
+    }
 
 };
 

@@ -1,66 +1,19 @@
 var app = angular.module('blackJack', []);
 
-app.controller('playerCtrl',['$scope','$http', function($scope, $http) {
-    $scope.getPlayersCards = function() {
+app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
+
+    $scope.getInfo = function() {
         $http({
             method: 'GET',
-            url: 'activeHands'
-        }).then(function(response){
-            $scope.player = response.data.vars.playerArray;
-            console.log($scope.player);
+            url: '/activeHands'
+        }).then(function (response) {
+            $scope.playerHand = response.data.playerArray;
+            $scope.dealerHand = response.data.dealerArray;
+            $scope.showSplitBtn = response.data.playerCanSplit;
+            $scope.showDoubleBtn = response.data.playerCanDouble;
         });
-    }
-}]);
 
-app.controller('dealerCtrl',['$scope','$http', function($scope, $http) {
-    $scope.getDealerCards = function() {
-        $http({
-            method: 'GET',
-            url: 'activeHands'
-        }).then(function(response){
-            $scope.dealer = response.data.vars.dealerArray;
-            console.log($scope.dealer);
-        });
-    }
-}]);
-
-app.controller('split1Ctrl',['$scope','$http', function($scope, $http) {
-    $scope.getSplit1Cards = function() {
-        $http({
-            method: 'GET',
-            url: 'activeHands'
-        }).then(function(response){
-            $scope.split1 = response.data.vars.split1Array;
-            console.log($scope.split1);
-        });
-    }
-}]);
-
-app.controller('split2Ctrl',['$scope','$http', function($scope, $http) {
-    $scope.getSplit2Cards = function() {
-        $http({
-            method: 'GET',
-            url: 'activeHands'
-        }).then(function(response){
-            $scope.split2 = response.data.vars.split2Array;
-            console.log($scope.split2);
-        });
-    }
-}]);
-
-app.controller('split3Ctrl',['$scope','$http', function($scope, $http) {
-    $scope.getSplit3Cards = function() {
-        $http({
-            method: 'GET',
-            url: 'activeHands'
-        }).then(function(response){
-            $scope.split3 = response.data.vars.split3Array;
-            console.log($scope.split3);
-        });
-    }
-}]);
-
-app.controller('buttonCtrl',['$scope','$http', function($scope, $http) {
+    };
 
     //this will make a call to deal the hand for both the house and the player
     $scope.dealBtn = function() {
@@ -69,57 +22,74 @@ app.controller('buttonCtrl',['$scope','$http', function($scope, $http) {
             url: '/deal'
         }).then(function (response) {
             console.log("This is the deal button ajax call");
-            $scope.card = response.data
+            $scope.card = response.data;
+
         });
+        this.getInfo();
     };
 
-    $scope.hitBtn = function () {
 
+    $scope.hitBtn = function() {
         $http({
             method: 'GET',
-            url: '/activeHands'
+            url: '/hit'
         }).then(function (response) {
-            console.log("Checking what hand is active ");
-            $scope.player = response.data.playerActive;
-            $scope.split1 = response.data.split1Active;
-            $scope.split2 = response.data.split2Active;
-            $scope.split3 = response.data.split3Active;
+            console.log("This is the hit button ajax call");
+            $scope.card = response.data;
 
-            if ($scope.player == true) {
-                        $http({
-                            method: 'GET',
-                            url: '/hit'
-                        }).then(function (response) {
-                            console.log('hit Player is active Route');
-                            $scope.card = response.data
-                        });
-            } else if ($scope.split1 == true){
-
-                $http({
-                    method: 'GET',
-                    url: '/hitSplit1'
-                }).then(function (response) {
-                    console.log('hit split1 is active Route');
-                    $scope.card = response.data
-                });
-            } else if ($scope.split2 == true){
-                $http({
-                    method: 'GET',
-                    url: '/hit'//Split3
-                }).then(function (response) {
-                    console.log('hit split2 is active Route');
-                    $scope.card = response.data
-                });
-            } else if($scope.split3 == true){  $http({
-                method: 'GET',
-                url: '/hit'//Split3
-            }).then(function (response) {
-                console.log('hit split3 is active Route');
-                $scope.card = response.data
-            });
-            }
         });
+        this.getInfo();
     };
+
+    //------------------------------
+
+    //$scope.hitBtn = function () {
+    //
+    //    $http({
+    //        method: 'GET',
+    //        url: '/activeHands'
+    //    }).then(function (response) {
+    //        console.log("Checking what hand is active ");
+    //        $scope.player = response.data.playerActive;
+    //        $scope.split1 = response.data.split1Active;
+    //        $scope.split2 = response.data.split2Active;
+    //        $scope.split3 = response.data.split3Active;
+    //
+    //        if (player == true) {
+    //                    $http({
+    //                        method: 'GET',
+    //                        url: '/hit'
+    //                    }).then(function (response) {
+    //                        console.log('hit Player is active Route');
+    //                        $scope.card = response.data
+    //                    });
+    //        } else if ($scope.split1 == true){
+    //
+    //            $http({
+    //                method: 'GET',
+    //                url: '/hitSplit1'
+    //            }).then(function (response) {
+    //                console.log('hit split1 is active Route');
+    //                $scope.card = response.data
+    //            });
+    //        } else if ($scope.split2 == true){
+    //            $http({
+    //                method: 'GET',
+    //                url: '/hit'//Split3
+    //            }).then(function (response) {
+    //                console.log('hit split2 is active Route');
+    //                $scope.card = response.data
+    //            });
+    //        } else if($scope.split3 == true){  $http({
+    //            method: 'GET',
+    //            url: '/hit'//Split3
+    //        }).then(function (response) {
+    //            console.log('hit split3 is active Route');
+    //            $scope.card = response.data
+    //        });
+    //        }
+    //    });
+    //};
 
     //------------------------------
     //this will make a call to complete the dealers hand
@@ -131,6 +101,7 @@ app.controller('buttonCtrl',['$scope','$http', function($scope, $http) {
             console.log("This is the stay button ajax call");
             $scope.card = response.data
         });
+        this.getInfo();
     };
 
     //--------------------------------
@@ -259,9 +230,9 @@ app.controller('buttonCtrl',['$scope','$http', function($scope, $http) {
             method: 'GET',
             url: '/split'
         }).then(function (response) {
-            console.log("You are on the btn call route ");
-            $scope.card = response.data
+            console.log("You are on the  btn call route ");
         });
+
     };
 //--------------------------------
 

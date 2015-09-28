@@ -2,25 +2,25 @@ extends layout
 
 block content
   h1 Blackjack
-  div#mainContainer.fluid
-    div(ng-controller='dealerCtrl' ng-show ='true')#dealerHand.row
+  div(ng-controller ='gameCtrl' )#mainContainer.fluid
+    div(ng-show ='true')#dealerHand.row
       div(ng-repeat ="cards in dealerHand").col-sm-3.cards
-        |{{cards.name+cards.suit}}
-    div(ng-controller='playerCtrl' ng-show ='true')#playerHand.row
+        img(ng-src ="/images/{{cards.imgName}}")
+    div(ng-show ='true')#playerHand.row
       div(ng-repeat ="cards in playerHand" ).col-sm-3.cards
-        |{{cards.name+cards.suit}}
-    div(ng-controller='split1Ctrl' ng-show ='false')#split1Hand.row
+        img(ng-src ="/images/{{cards.imgName}}")
+    div(ng-show ='false')#split1Hand.row
       div(ng-repeat ="cards in split1Hand").col-sm-3.cards
-        |{{cards.name+cards.suit}}
-    div(ng-controller='split1Ctrl' ng-show ='false')#split2Hand.row
+        img(ng-src ="/images/{{cards.imgName}}")
+    div(ng-show ='false')#split2Hand.row
       div(ng-repeat ="cards in split2Hand").col-sm-3.cards
-        |{{cards.name+cards.suit}}
-    div(ng-controller='split1Ctrl' ng-show ='false')#split3Hand.row
+        img(ng-src ="/images/{{cards.imgName}}")
+    div(ng-show ='false')#split3Hand.row
       div(ng-repeat ="cards in split3Hand").col-sm-3.cards
-        |{{cards.name+cards.suit}}
-    div(ng-controller='buttonCtrl').gamePlayButtons
-      button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='false') Double
-      button(id='splitBtn' ng-click='splitBtn()' ng-show ='false') Split
+        img(ng-src ="/images/{{cards.imgName}}")
+    div.gamePlayButtons
+      button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn') Double
+      button(id='splitBtn' ng-click='splitBtn()' ng-show ='showSplitBtn') Split
       button(id='stayBtn' ng-click='stayBtn()' ng-show ='true') Stay
       button(id='hitBtn' ng-click='hitBtn()' ng-show ='true') Hit
       input(id='bet' type = 'number' min = 1 max = 100 placeholder='Bet')
