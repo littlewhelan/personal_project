@@ -18,9 +18,6 @@ var hitOriginalHand = function() {
     if(vars.split1Empty==true && vars.playerBust == true){
         vars.allHandsDone =true;
     }
-
-
-
 };
 
 module.exports = hitOriginalHand;
