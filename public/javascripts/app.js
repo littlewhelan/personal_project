@@ -31,6 +31,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             $scope.split1 = response.data.split1Active;
             $scope.split2 = response.data.split2Active;
             $scope.split3 = response.data.split3Active;
+            $scope.showDeal = response.data.showDealBtn;
         });
 
     };
@@ -89,7 +90,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
                     console.log('hit split1 is active Route');
                     $scope.card = response.data
                 });
-
+                this.getInfo()
             } else if ($scope.split2 == true){
                 $http({
                     method: 'GET',

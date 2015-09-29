@@ -7,6 +7,9 @@ block content
         img(src ="/images/{{cards.imgName}}")
       div(ng-show='allHandsDone').col-sm-1.cards.total
         |Total:{{dealerScore}}
+    div.row
+        div.col-sm-1
+          img(ng-src ="/images/sized.png")
     div(ng-show ='true')#playerHand.row
       div(ng-repeat ="cards in playerHand" ).col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
@@ -15,12 +18,12 @@ block content
     div(ng-show ='split1Active')#split1Hand.row
       div(ng-repeat ="cards in split1Hand").col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.cards.total
+      div.col-sm-1.cards
         |Total:{{split1Score}}
     div(ng-show ='split2Active')#split2Hand.row
       div(ng-repeat ="cards in split2Hand").col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.cards.total
+      div.col-sm-1.cards
         |Total:{{split2Score}}
     div(ng-show ='split3Active')#split3Hand.row
       div(ng-repeat ="cards in split3Hand").col-sm-1.cards
@@ -36,5 +39,5 @@ block content
       button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn') Stay
       button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn') Hit
       input(id='bet' type = 'number' min = 4 max = 24 step =4 placeholder='Bet' ng-model='playerBet' )
-      button(id='dealBtn' ng-click='dealBtn()' ng-show ='true') Deal
+      button(id='dealBtn' ng-click='dealBtn()' ng-show='true') Deal
     a(href='/rules') Rules

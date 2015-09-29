@@ -14,10 +14,10 @@ var hitSplit1Hand = function() {
     //check the new score
     calc.split1ScoreF();
     //Check to see if the player bust if true subtract the bet
-    bust.split1();
-    if(vars.split2Empty==true && vars.split1Bust == true){
-        vars.allHandsDone =true;
-    }
+   // bust.split1();
+   // if(vars.split2Empty==true && vars.split1Bust == true){
+        //vars.allHandsDone =true;
+    //}
 };
 
 module.exports = hitSplit1Hand;

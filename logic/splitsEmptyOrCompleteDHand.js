@@ -4,6 +4,7 @@ var comp = require('./compareScores');
 var cards = require('./cards');
 var allHandsDone = require('./allHandsDone');
 var bust = require('./handBust');
+var calc = require('./calcScores');
 
 var checkSplits = {
 
@@ -14,6 +15,7 @@ var checkSplits = {
             vars.split2Active = false;
             vars.split3Array = false;
             vars.split1Array.push(cards.drawCard());
+            calc.split1ScoreF();
         } else if (vars.split1Array.length == 0) {
             vars.allHandsDone = true;
             dFin();
