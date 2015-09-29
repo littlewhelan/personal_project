@@ -2,8 +2,8 @@ extends layout
 
 block content
   div(ng-controller ='gameCtrl' )#mainContainer.fluid
-    div(ng-show ='true')#dealerHand.row
-      div(ng-repeat ="cards in dealerHand").col-sm-1.cards
+    div#dealerHand.row
+      div(ng-repeat ="cards in dealerHand" ng-hide = '$index == 1' ng-show= 'allHandsDone').col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
       div(ng-show='allHandsDone').col-sm-1.cards.total
         |Total:{{dealerScore}}
@@ -34,6 +34,5 @@ block content
       button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn') Double
       button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn') Stay
       button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn') Hit
-      input(id='bet' type = 'number' min = 4 max = 24 step =4 placeholder='Bet' ng-model='playerBet' )
       button(id='dealBtn' ng-click='dealBtn()' ng-show ='true') Deal
     a(href='/rules') Rules
