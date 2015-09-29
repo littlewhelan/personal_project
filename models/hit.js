@@ -5,7 +5,7 @@ var calc = require('../logic/calcScores');
 var bust = require('../logic/handBust');
 
 
-var hitOriginalHand = function() {
+var hitPlayerHand = function() {
 
     //draw one more card
     vars.playerArray.push(cards.drawCard());
@@ -20,4 +20,4 @@ var hitOriginalHand = function() {
     }
 };
 
-module.exports = hitOriginalHand;
+module.exports = hitPlayerHand;

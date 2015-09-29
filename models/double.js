@@ -5,7 +5,7 @@ var check = require('../logic/splitsEmptyOrCompleteDHand');
 var bust = require('../logic/handBust');
 
 
-var double = function() {
+var doublePlayerHand = function() {
     // double the current bet that the player made
     vars.playerBet = (vars.playerBet*2);
     //add one card to the players hand
@@ -25,4 +25,4 @@ var double = function() {
 
 
 
-module.exports = double;
+module.exports = doublePlayerHand;

@@ -16,6 +16,8 @@ var checkSplits = {
             vars.split1Array.push(cards.drawCard());
             calc.split1ScoreF();
         } else if (vars.split1Array.length == 0) {
+           vars.playerCanSplit = false;
+            vars.playerCanHit =false;
             vars.allHandsDone = true;
             dFin();
             bust.dealer();

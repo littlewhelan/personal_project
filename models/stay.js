@@ -11,6 +11,8 @@ var stand = function () {
     //set the active route to split1
     checkSplits.split1();
 
+
+
 };
 
 module.exports = stand;
