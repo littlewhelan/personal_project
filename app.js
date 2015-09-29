@@ -12,8 +12,21 @@ var hit = require('./routes/hit');
 var stay = require('./routes/stay');
 var split = require('./routes/split');
 var rules = require('./routes/rules');
-var hitSplit1 = require('./routes/hitSplit1');
 var activeHandler = require('./routes/activeHands');
+
+var hitSplit1 = require('./routes/hitSplit1');
+var staySplit1 = require('./routes/staySplit1');
+var doubleSplit1 = require('./routes/doubleSplit1');
+var splitSplit1 = require('./routes/splitSplit1');
+
+var hitSplit2 = require('./routes/hitSplit2');
+var staySplit2 = require('./routes/staySplit2');
+var doubleSplit2 =require('./routes/doubleSplit2');
+var splitSplit2 = require('./routes/splitSplit2');
+
+var hitSplit3 = require('./routes/hitSplit3');
+var staySplit3 = require('./routes/staySplit3');
+var doubleSplit3 =require('./routes/doubleSplit3');
 
 var app = express();
 
@@ -36,11 +49,21 @@ app.use('/hit', hit);
 app.use('/stay', stay);
 app.use('/split', split);
 app.use('/rules', rules);
-app.use('/hitSplit1', hitSplit1);
 app.use('/activeHands',activeHandler);
 
+app.use('/hitSplit1', hitSplit1);
+app.use('/staySplit1', staySplit1);
+app.use('/doubleSplit1', doubleSplit1);
+app.use('/splitSplit1',splitSplit1);
 
+app.use('/hitSplit2', hitSplit2);
+app.use('/staySplit2', staySplit2);
+app.use('/doubleSplit2', doubleSplit2);
+app.use('/splitSplit2',splitSplit2);
 
+app.use('/hitSplit3', hitSplit3);
+app.use('/staySplit3', staySplit3);
+app.use('/doubleSplit3', doubleSplit3);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

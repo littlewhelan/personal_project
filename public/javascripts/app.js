@@ -38,6 +38,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
 
     //this will make a call to deal the hand for both the house and the player
     $scope.dealBtn = function() {
+        this.getInfo();
         $http({
             method: 'GET',
             url: '/deal'
@@ -66,12 +67,6 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
 
     $scope.hitBtn = function () {
         this.getInfo();
-        //$http({
-        //    method: 'GET',
-        //    url: '/activeHands'
-        //}).then(function (response) {
-        //    console.log("Checking what hand is active ");
-
             if (this.player == true) {
                         $http({
                             method: 'GET',
@@ -81,7 +76,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
                             $scope.card = response.data
                         });
                this.getInfo();
-            } else if ($scope.split1 == true){
+            } else if (this.split1 == true){
 
                 $http({
                     method: 'GET',
@@ -91,89 +86,86 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
                     $scope.card = response.data
                 });
                 this.getInfo()
-            } else if ($scope.split2 == true){
+            } else if (this.split2 == true){
                 $http({
                     method: 'GET',
-                    url: '/hit'//Split3
+                    url: '/hitSplit2'
                 }).then(function (response) {
                     console.log('hit split2 is active Route');
                     $scope.card = response.data
                 });
-            } else if($scope.split3 == true){  $http({
+                this.getInfo();
+            } else if(this.split3 == true){  $http({
                 method: 'GET',
-                url: '/hit'//Split3
+                url: '/hitSplit3'
             }).then(function (response) {
                 console.log('hit split3 is active Route');
                 $scope.card = response.data
             });
             }
-    //    });
     };
 
     //------------------------------
     //this will make a call to complete the dealers hand
-    $scope.stayBtn = function() {
-        $http({
-            method: 'GET',
-            url: '/stay'
-        }).then(function (response) {
-            console.log("This is the stay button ajax call");
-            $scope.card = response.data
-        });
-        this.getInfo();
-    };
-
-    //--------------------------------
-    //$scope.stayBtn = function () {
+    //$scope.stayBtn = function() {
     //    $http({
     //        method: 'GET',
-    //        url: '/activeHands'
+    //        url: '/stay'
     //    }).then(function (response) {
-    //        console.log("Checking what hand is active ");
-    //        $scope.player = response.data.playerActive;
-    //        $scope.split1 = response.data.split1Active;
-    //        $scope.split2 = response.data.split2Active;
-    //        $scope.split3= response.data.split3Active;
-    //
-    //        if ($scope.player == true) {
-    //            $http({
-    //                method: 'GET',
-    //                url: '/stay'
-    //            }).then(function (response) {
-    //                console.log('hit Player is active Route');
-    //                $scope.card = response.data
-    //            });
-    //        } else if ($scope.split1 == true){
-    //            $http({
-    //                method: 'GET',
-    //                url: '/staySplit1'
-    //            }).then(function (response) {
-    //                console.log('hit split1 is active Route');
-    //                $scope.card = response.data
-    //            });
-    //        } else if ($scope.split2 == true){
-    //            $http({
-    //                method: 'GET',
-    //                url: '/staySplit2'
-    //            }).then(function (response) {
-    //                console.log('hit split2 is active Route');
-    //                $scope.card = response.data
-    //            });
-    //        } else if($scope.split3 == true){  $http({
-    //            method: 'GET',
-    //            url: '/staySplit3'
-    //        }).then(function (response) {
-    //            console.log('hit split3 is active Route');
-    //            $scope.card = response.data
-    //        });
-    //        }
+    //        console.log("This is the stay button ajax call");
+    //        $scope.card = response.data
     //    });
+    //    this.getInfo();
     //};
+
+    //--------------------------------
+    $scope.stayBtn = function () {
+        this.getInfo();
+            if (this.player == true) {
+                $http({
+                    method: 'GET',
+                    url: '/stay'
+                }).then(function (response) {
+                    console.log('stay Player is active Route');
+                    $scope.card = response.data
+                });
+                this.getInfo();
+            } else if (this.split1 == true){
+                $http({
+                    method: 'GET',
+                    url: '/staySplit1'
+                }).then(function (response) {
+                    console.log('stay split1 is active Route');
+                    $scope.card = response.data
+                });
+                this.getInfo();
+            } else if (this.split2 == true){
+                $http({
+                    method: 'GET',
+                    url: '/staySplit2'
+                }).then(function (response) {
+                    console.log('stay split2 is active Route');
+                    $scope.card = response.data
+                });
+                this.getInfo();
+            } else if(this.split3 == true){  $http({
+                method: 'GET',
+                url: '/staySplit3'
+            }).then(function (response) {
+                console.log('stay split3 is active Route');
+                $scope.card = response.data
+            });
+                this.getInfo();
+            }
+
+
+    };
 
 
     //--------------------------------
     //this will make a call to get the double function
     $scope.doubleBtn = function() {
+        this.getInfo();
         $http({
             method: 'GET',
             url: '/double'
@@ -246,6 +238,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
     //--------------------------------
     //This will make a call for the split button
     $scope.splitBtn = function() {
+        this.getInfo();
         $http({
             method: 'GET',
             url: '/split'

@@ -3,7 +3,7 @@ var vars = require('../logic/vars');
 var calcScore = require('../logic/calcScores');
 var check = require('../logic/splitsEmptyOrCompleteDHand');
 var bust = require('../logic/handBust');
-var allHandsDone = require('../logic/allHandsDone');
+
 
 var double = function() {
     // double the current bet that the player made
@@ -18,7 +18,7 @@ var double = function() {
     //if the split does not have any cards it will finish the dealers hand
     //it will also compare the score if neither the dealer or the player bust
     check.split1();
-    allHandsDone();
+
     vars.playerCanDouble = false;
     vars.playerCanHit = false;
 };

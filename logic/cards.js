@@ -7,7 +7,7 @@ var cards = {
         this.name = name;
         this.suit = suit;
         this.value = (value > 10) ? 10 : this.value = value;
-        this.imgName= imgName;
+        this.imgName = imgName;
     },
 //this will create an array with 52 objects (the cards)
     deck: function () {
@@ -17,7 +17,7 @@ var cards = {
 
         for (var s = 0; s < this.suit.length; s++) {
             for (var n = 0; n < this.name.length; n++) {
-                cards.push(new this.Card(this.name[n], this.suit[s], n + 1, this.name[n] + this.suit[s] +'.png'));
+                cards.push(new this.Card(this.name[n], this.suit[s], n + 1, this.name[n] + this.suit[s] + '.png'));
             }
         }
         return cards;
@@ -33,9 +33,52 @@ var cards = {
         }
         return cards
     },
-    //this creates the deck
-    theDeck: function () {
-        return this.shuffleDeck(this.deck());
+    ////this creates the deck
+    //theDeck: function () {
+    //    return this.shuffleDeck(this.deck());
+    //},
+        //this creates a stacked deck for testing
+        theDeck: function () {
+           var splitArray = [
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'},
+                {name:'King',suit:'Heart',value:10,imgName:'KingHearts.png'}
+            ];
+            return splitArray;
+
     },
     //take a card off the top of the deck
     drawCard: function () {
