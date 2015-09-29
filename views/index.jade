@@ -3,7 +3,7 @@ extends layout
 block content
   div(ng-controller ='gameCtrl' )#mainContainer.fluid
     div(ng-show ='true')#dealerHand.row
-      div(ng-repeat ="cards in dealerHand").col-sm-1.cards
+      div(ng-repeat ="cards in dealerHand" ng-hide="$index==1" ng-show ="$index ==1 && allHandsDone").col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
       div(ng-show='allHandsDone').col-sm-1.cards.total
         |Total:{{dealerScore}}

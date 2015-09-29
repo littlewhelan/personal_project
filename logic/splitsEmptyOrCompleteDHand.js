@@ -4,6 +4,7 @@ var comp = require('./compareScores');
 var cards = require('./cards');
 var bust = require('./handBust');
 var calc = require('./calcScores');
+var reset = require('./reset');
 
 var checkSplits = {
 
@@ -32,12 +33,15 @@ var checkSplits = {
             vars.split3Array = false;
             vars.split2Array.push(cards.drawCard());
         } else if (vars.split2Array.length == 0) {
+            vars.playerCanSplit = false;
+            vars.playerCanHit =false;
+            vars.split1CanSplit = false;
+            vars.split1CanHit =false;
             vars.allHandsDone = true;
             dFin();
             bust.dealer();
             comp.player();
             comp.split1();
-
         }
     },
     split3:function() {
@@ -48,6 +52,12 @@ var checkSplits = {
             vars.split3Array = true;
             vars.split3Array.push(cards.drawCard());
         } else if (vars.split3Array.length == 0) {
+            vars.playerCanSplit = false;
+            vars.playerCanHit = false;
+            vars.split1CanSplit = false;
+            vars.split1CanHit = false;
+            vars.split2CanHit = false;
+            vars.split2CanSplit = false;
             vars.allHandsDone = true;
             dFin();
             bust.dealer();
