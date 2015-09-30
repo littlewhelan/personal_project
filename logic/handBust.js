@@ -7,7 +7,6 @@ var handBust = {
         if (vars.playerScore > 21) {
             vars.allHandsDone = true;
             vars.playerBust = true;
-            vars.playerDone = true;
             vars.playerCanHit = false;
             vars.playersBank -= vars.playerBet;
             dFin();

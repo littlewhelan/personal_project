@@ -9,7 +9,6 @@ var dealerHit= function () {
         vars.dealerArray.push(cards.drawCard());
         calc.dealerScoreF();
     }
-    vars.allHandsDone = true;
 };
 
 

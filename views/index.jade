@@ -1,28 +1,31 @@
 extends layout
 
 block content
-  div(ng-controller ='gameCtrl' )#mainContainer.fluid
+  h1 Blackjack
+  div(ng-controller ='gameCtrl')#mainContainer.fluid
     div#dealerHand.row.cards
-      div.space-er.col-sm-offset-3.col-sm-1
+      div.col-sm-offset-4.col-sm-1
       div(ng-hide='allHandsDone').col-sm-1.cards
         img(src ="/images/sized.png")
       div(ng-repeat ="cards in dealerHand" ng-hide = '$index == 1 && !allHandsDone' ng-show= 'allHandsDone').col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
-      div(ng-show='allHandsDone').col-sm-1.total
-        |Total:{{dealerScore}}
-    div(ng-show ='true')#playerHand.row.cards
-      div.space-er.col-sm-offset-3.col-sm-1
+      div(ng-show='allHandsDone').col-sm-1.total.center
+        |{{dealerScore}}
+    div(ng-show ='true').row.cards#playerHand
+      div.col-sm-offset-4.col-sm-1
       div(ng-repeat ="cards in playerHand" ).col-sm-1
         img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.total
-        |Total:{{playerScore}}
-    div.gamePlayButtons.col-md-offset-4
-      button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn').col-sm-1 2X
-      button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn').col-sm-1 Stay
-      button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn').col-sm-1 Hit
-      button(id='dealBtn' ng-click='dealBtn()' ng-show ='true').col-sm-1 Deal
-    div(ng-show ='true')
-      |Bank: {{playersBank}}
-      |Bet: {{playerBet}}
+      div.col-sm-1.total.center
+        |{{playerScore}}
+    div.row
+      div.gamePlayButtons.col-sm-offset-5
+        button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn').col-sm-1 2X
+        button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn').col-sm-1 Stay
+        button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn').col-sm-1 Hit
+        button(id='dealBtn' ng-click='dealBtn()' ng-show ='true').col-sm-1 Deal
+    div(ng-show ='allHandsDone').row
+      div.col-sm-offset-5.col-sm-6.bank
+        |Bank: {{playersBank}}
+        |Bet: {{playerBet}}
     div.rulesLink
-    a(href='/rules') Rules
+      a(href='/rules') Rules
