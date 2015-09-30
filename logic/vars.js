@@ -56,7 +56,8 @@ var score = {
     split2CanHit:true,
     split3CanHit:true,
     //need way to show that all hands are complete
-    allHandsDone:false
+    allHandsDone:false,
+    firstHand:true
 
 };
 

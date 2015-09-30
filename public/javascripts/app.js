@@ -31,6 +31,7 @@ app.controller('gameCtrl',['$scope','$http', function($scope, $http) {
             $scope.split1 = response.data.split1Active;
             $scope.split2 = response.data.split2Active;
             $scope.split3 = response.data.split3Active;
+            $scope.firstHand = response.data.firstHand;
         });
     };
 

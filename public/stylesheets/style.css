@@ -3,12 +3,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/*.cards {*/
-  /*border: 1px solid #000000;*/
-  /*width:175px;*/
-  /*height:275px;*/
-/*}*/
+.cards {
+ margin:10px 0 10px 0;
+}
 
 .textCenter{
   text-align: center;
+}
+
+.gameButtons {
+    margin: 0 5px 0 5px
 }

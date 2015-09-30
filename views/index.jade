@@ -2,24 +2,27 @@ extends layout
 
 block content
   div(ng-controller ='gameCtrl' )#mainContainer.fluid
-    div#dealerHand.row
-      div(ng-hide='allHandsDone || dealerHand.length === 0').col-sm-1.cards
+    div#dealerHand.row.cards
+      div.space-er.col-sm-offset-3.col-sm-1
+      div(ng-hide='allHandsDone').col-sm-1.cards
         img(src ="/images/sized.png")
       div(ng-repeat ="cards in dealerHand" ng-hide = '$index == 1 && !allHandsDone' ng-show= 'allHandsDone').col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
-      div(ng-show='allHandsDone').col-sm-1.cards.total
+      div(ng-show='allHandsDone').col-sm-1.total
         |Total:{{dealerScore}}
-    div(ng-show ='true')#playerHand.row
-      div(ng-repeat ="cards in playerHand" ).col-sm-1.cards
+    div(ng-show ='true')#playerHand.row.cards
+      div.space-er.col-sm-offset-3.col-sm-1
+      div(ng-repeat ="cards in playerHand" ).col-sm-1
         img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.cards
+      div.col-sm-1.total
         |Total:{{playerScore}}
-    div
+    div.gamePlayButtons.col-md-offset-4
+      button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn').col-sm-1 Double
+      button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn').col-sm-1 Stay
+      button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn').col-sm-1 Hit
+      button(id='dealBtn' ng-click='dealBtn()' ng-show ='true').col-sm-1 Deal
+    div(ng-show ='true')
       |Bank: {{playersBank}}
       |Bet: {{playerBet}}
-    div.gamePlayButtons
-      button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn') Double
-      button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn') Stay
-      button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn') Hit
-      button(id='dealBtn' ng-click='dealBtn()' ng-show ='true') Deal
-    a(href='/rules') Rules
+    //div
+    //a(href='/rules') Rules
