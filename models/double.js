@@ -2,6 +2,7 @@ var cards = require('../logic/cards');
 var vars = require('../logic/vars');
 var calcScore = require('../logic/calcScores');
 var bust = require('../logic/handBust');
+var dFin = require('../logic/dealerHitTo17');
 
 
 var double = function() {
@@ -14,10 +15,12 @@ var double = function() {
     //check to see if the player busts if the player busts take money from the account
     //set hand to done
     bust.player();
-    //if the split does not have any cards it will finish the dealers hand
+    dFin();
+
     //it will also compare the score if neither the dealer or the player bust
     vars.playerCanDouble = false;
     vars.playerCanHit = false;
+    vars.allHandsDone = true;
 };
 
 
