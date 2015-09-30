@@ -22,7 +22,7 @@ var naturalBlackjack = function () {
         vars.playersBank += ((vars.playerBet*3)/2);
         vars.playerDone = true;
         vars.allHandsDone = true;
-    } else if (vars.dealersFirstCardIsAce == true && vars.naturalBlackjackDealer == true){
+    } else if (vars.naturalBlackjackDealer == true){
         vars.playersBank -= vars.playerBet;
         vars.playerDone = true;
         vars.allHandsDone = true;

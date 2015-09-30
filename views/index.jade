@@ -3,7 +3,9 @@ extends layout
 block content
   div(ng-controller ='gameCtrl' )#mainContainer.fluid
     div#dealerHand.row
-      div(ng-repeat ="cards in dealerHand" ng-hide = '$index == 1' ng-show= 'allHandsDone').col-sm-1.cards
+      div(ng-hide='allHandsDone || dealerHand.length === 0').col-sm-1.cards
+        img(src ="/images/sized.png")
+      div(ng-repeat ="cards in dealerHand" ng-hide = '$index == 1 && !allHandsDone' ng-show= 'allHandsDone').col-sm-1.cards
         img(src ="/images/{{cards.imgName}}")
       div(ng-show='allHandsDone').col-sm-1.cards.total
         |Total:{{dealerScore}}
@@ -12,21 +14,6 @@ block content
         img(src ="/images/{{cards.imgName}}")
       div.col-sm-1.cards
         |Total:{{playerScore}}
-    div(ng-show ='split1Active')#split1Hand.row
-      div(ng-repeat ="cards in split1Hand").col-sm-1.cards
-        img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.cards.total
-        |Total:{{split1Score}}
-    div(ng-show ='split2Active')#split2Hand.row
-      div(ng-repeat ="cards in split2Hand").col-sm-1.cards
-        img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.cards.total
-        |Total:{{split2Score}}
-    div(ng-show ='split3Active')#split3Hand.row
-      div(ng-repeat ="cards in split3Hand").col-sm-1.cards
-        img(src ="/images/{{cards.imgName}}")
-      div.col-sm-1.cards.total
-        |Total:{{split3Score}}
     div
       |Bank: {{playersBank}}
       |Bet: {{playerBet}}
