@@ -2,7 +2,6 @@ var deal = require('../logic/dealHandF');
 var reset =require('../logic/reset');
 var vars = require('../logic/vars');
 var calcScore = require('../logic/calcScores');
-var canSplit = require('../logic/splitPossible');
 var checkBLJ = require('../logic/checkNatBlackjack');
 var canDouble = require('../logic/canDoubleDown2');
 var dFin = require('../logic/dealerHitTo17');
@@ -23,8 +22,8 @@ var dealMainHand = function() {
         dFin()
     };
 
-    //check can this hand be split
-    canSplit.player(vars.playerArray);
+
+
     //checks if the player can double
     canDouble.player();
 };

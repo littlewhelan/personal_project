@@ -10,7 +10,6 @@ var deal = require('./routes/deal');
 var double = require('./routes/double');
 var hit = require('./routes/hit');
 var stay = require('./routes/stay');
-var split = require('./routes/split');
 var rules = require('./routes/rules');
 var activeHandler = require('./routes/activeHands');
 
@@ -33,7 +32,6 @@ app.use('/deal', deal);
 app.use('/double', double);
 app.use('/hit', hit);
 app.use('/stay', stay);
-app.use('/split', split);
 app.use('/rules', rules);
 app.use('/activeHands',activeHandler);
 
