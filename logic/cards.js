@@ -14,13 +14,20 @@ var cards = {
         var cards = [];
         this.name = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
         this.suit = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+        var numOfDecks = 0;
 
-        for (var s = 0; s < this.suit.length; s++) {
-            for (var n = 0; n < this.name.length; n++) {
-                cards.push(new this.Card(this.name[n], this.suit[s], n + 1, this.name[n] + this.suit[s] +'.png'));
-            }
-        }
-        return cards;
+       while(numOfDecks < 4) {
+           for (var s = 0; s < this.suit.length; s++) {
+               for (var n = 0; n < this.name.length; n++) {
+                   cards.push(new this.Card(this.name[n], this.suit[s], n + 1, this.name[n] + this.suit[s] + '.png'));
+
+               }
+           }
+           numOfDecks += 1;
+       }
+           return cards;
+
+
     },
     //This is the Fisher Yates Function
     shuffleDeck: function (cards) {
