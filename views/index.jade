@@ -3,7 +3,7 @@ extends layout
 block content
   h1 Blackjack
   div(ng-controller ='gameCtrl')#mainContainer.fluid
-    div#dealerHand.row.cards
+    div#dealerHand.row
       div.col-sm-offset-4.col-sm-1
       div(ng-hide='allHandsDone').col-sm-1.cards
         img(src ="/images/sized.png")
@@ -17,15 +17,16 @@ block content
         img(src ="/images/{{cards.imgName}}")
       div.col-sm-1.total.center
         |{{playerScore}}
-    div.row
+    div.row.spacer
       div.gamePlayButtons.col-sm-offset-5
         button(id='doubleBtn' ng-click='doubleBtn()' ng-show ='showDoubleBtn').col-sm-1 2X
         button(id='stayBtn' ng-click='stayBtn()' ng-show ='hideStayBtn').col-sm-1 Stay
         button(id='hitBtn' ng-click='hitBtn()' ng-show ='hideHitBtn').col-sm-1 Hit
         button(id='dealBtn' ng-click='dealBtn()' ng-show ='true').col-sm-1 Deal
-    div(ng-show ='allHandsDone').row
+    div(ng-show ='true').row
       div.col-sm-offset-5.col-sm-6.bank
         |Bank: {{playersBank}}
+      div.col-sm-offset-5.col-sm-6.bank
         |Bet: {{playerBet}}
     div.rulesLink
       a(href='/rules') Rules

@@ -12,9 +12,11 @@ body {
 }
 
 .gameButtons {
-    margin: 15px;
     position:fixed;
     bottom: 20px;
+}
+.spacer{
+    margin-bottom: 20px;
 }
 
 .rulesLink {
@@ -25,7 +27,8 @@ body {
 
 .bank{
     font-size: 20px;
-    margin-top:40px;
+    padding-left: 0;
+    padding-bottom:10px;
 }
 
 h1{
@@ -40,4 +43,8 @@ h1{
 
 .center{
     vertical-align:baseline;
+}
+
+body {
+    background-color: #194D1E;
 }
